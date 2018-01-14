@@ -4,8 +4,8 @@
 yarn install stats.re
 ```
 
-```
-# in bsconfig.json
+```javascript
+// in bsconfig.json
 "bs-dependencies": ["stats"]
 ```
 
