@@ -1,6 +1,6 @@
 {
   "name": "stats.re",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "scripts": {
     "build": "bsb -make-world",
     "start": "bsb -make-world -w & parcel tests.html",
