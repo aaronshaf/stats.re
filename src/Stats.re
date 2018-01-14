@@ -44,3 +44,9 @@ let quantile_sorted = (x: list(float), quantile: float) => {
     List.nth(x, int_of_float(index));
   };
 };
+
+let root_mean_squared = (x: list(float)) => {
+  let sumOfSquares =
+    ListLabels.fold_left(~f=(prev, b) => prev +. b ** 2., ~init=0., x);
+  sumOfSquares /. float_of_int(List.length(x)) |> sqrt;
+};

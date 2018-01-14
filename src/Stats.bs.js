@@ -60,11 +60,19 @@ function quantile_sorted(x, quantile) {
   }
 }
 
-exports.max             = max;
-exports.min             = min;
-exports.product         = product;
-exports.sum_simple      = sum_simple;
-exports.mean            = mean;
-exports.sort            = sort;
-exports.quantile_sorted = quantile_sorted;
+function root_mean_squared(x) {
+  var sumOfSquares = ListLabels.fold_left((function (prev, b) {
+          return prev + Math.pow(b, 2);
+        }), 0, x);
+  return Math.sqrt(sumOfSquares / List.length(x));
+}
+
+exports.max               = max;
+exports.min               = min;
+exports.product           = product;
+exports.sum_simple        = sum_simple;
+exports.mean              = mean;
+exports.sort              = sort;
+exports.quantile_sorted   = quantile_sorted;
+exports.root_mean_squared = root_mean_squared;
 /* No side effect */

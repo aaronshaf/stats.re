@@ -225,13 +225,37 @@ var quantile_sorted_result5 = /* tuple */[
   result$8
 ];
 
-exports.max_result              = max_result;
-exports.product_result          = product_result;
-exports.sum_simple_result       = sum_simple_result;
-exports.mean_result1            = mean_result1;
-exports.quantile_sorted_result1 = quantile_sorted_result1;
-exports.quantile_sorted_result2 = quantile_sorted_result2;
-exports.quantile_sorted_result3 = quantile_sorted_result3;
-exports.quantile_sorted_result4 = quantile_sorted_result4;
-exports.quantile_sorted_result5 = quantile_sorted_result5;
+var result$9 = Stats.root_mean_squared(/* :: */[
+      -1,
+      /* :: */[
+        1,
+        /* :: */[
+          -1,
+          /* :: */[
+            1,
+            /* [] */0
+          ]
+        ]
+      ]
+    ]);
+
+var root_mean_squared_result_001 = +(result$9 === 1);
+
+var root_mean_squared_result = /* tuple */[
+  "Stats.root_mean_squared",
+  root_mean_squared_result_001,
+  1,
+  result$9
+];
+
+exports.max_result               = max_result;
+exports.product_result           = product_result;
+exports.sum_simple_result        = sum_simple_result;
+exports.mean_result1             = mean_result1;
+exports.quantile_sorted_result1  = quantile_sorted_result1;
+exports.quantile_sorted_result2  = quantile_sorted_result2;
+exports.quantile_sorted_result3  = quantile_sorted_result3;
+exports.quantile_sorted_result4  = quantile_sorted_result4;
+exports.quantile_sorted_result5  = quantile_sorted_result5;
+exports.root_mean_squared_result = root_mean_squared_result;
 /* result Not a pure module */

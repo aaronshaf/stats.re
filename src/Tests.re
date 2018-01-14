@@ -70,3 +70,10 @@ let quantile_sorted_result5 = {
   let expectation = 4.;
   ("Stats.quantile_sorted (1.)", result === expectation, expectation, result);
 };
+
+let root_mean_squared_result = {
+  let list1 = [(-1.), 1., (-1.), 1.];
+  let result = Stats.root_mean_squared(list1);
+  let expectation = 1.;
+  ("Stats.root_mean_squared", result === expectation, expectation, result);
+};
