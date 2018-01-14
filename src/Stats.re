@@ -26,7 +26,7 @@ let sort = (x: list(float)) =>
     x
   );
 
-/* probably did necessary float <-> int stuff. needs review. */
+/* probably did unnecessary float <-> int stuff. needs review. */
 let quantile_sorted = (x: list(float), quantile: float) => {
   let length = List.length(x);
   let is_quantile_integer = float_of_int(int_of_float(quantile)) === quantile;
