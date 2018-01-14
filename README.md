@@ -1,6 +1,6 @@
 ## Usage
 
-```
+```bash
 yarn install stats.re
 ```
 
