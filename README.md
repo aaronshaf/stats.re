@@ -1,5 +1,14 @@
 ## Usage
 
+```
+yarn install stats.re
+```
+
+```
+# in bsconfig.json
+"bs-dependencies": ["stats"]
+```
+
 ```reason
 Stats.max(x: list(float))
 Stats.min(x: list(float))

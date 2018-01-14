@@ -6,11 +6,16 @@
     "start": "bsb -make-world -w",
     "clean": "bsb -clean-world"
   },
-  "keywords": ["bucklescript", "reason", "statistics"],
+  "keywords": [
+    "bucklescript",
+    "reason",
+    "statistics"
+  ],
   "author": "Aaron Shafovaloff <aaronshaf@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "bs-platform": "^2.1.0",
-    "lit-html": "^0.8.0"
+    "lit-html": "^0.8.0",
+    "parcel-bundler": "^1.4.1"
   }
 }
