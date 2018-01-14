@@ -1,0 +1,13 @@
+{
+  "name": "stats",
+  "version": "0.1.0",
+  "sources": ["src"],
+  "package-specs": {
+    "module": "commonjs",
+    "in-source": true
+  },
+  "suffix": ".bs.js",
+  "bs-dependencies": [],
+  "namespace": false,
+  "refmt": 3
+}
