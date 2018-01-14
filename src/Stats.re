@@ -52,7 +52,7 @@ let quantile = (quantile: float, x: list(float)) => {
 
 let median = (x: list(float)) => quantile(0.5, x);
 
-let root_mean_squared = (x: list(float)) => {
+let root_mean_square = (x: list(float)) => {
   let sumOfSquares =
     ListLabels.fold_left(~f=(prev, b) => prev +. b ** 2., ~init=0., x);
   sumOfSquares /. float_of_int(List.length(x)) |> sqrt;

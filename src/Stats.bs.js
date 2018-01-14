@@ -69,7 +69,7 @@ function median(x) {
   return quantile(0.5, x);
 }
 
-function root_mean_squared(x) {
+function root_mean_square(x) {
   var sumOfSquares = ListLabels.fold_left((function (prev, b) {
           return prev + Math.pow(b, 2);
         }), 0, x);
@@ -78,15 +78,15 @@ function root_mean_squared(x) {
 
 var min_sorted = List.hd;
 
-exports.max               = max;
-exports.min               = min;
-exports.product           = product;
-exports.sum_simple        = sum_simple;
-exports.mean              = mean;
-exports.sort              = sort;
-exports.quantile_sorted   = quantile_sorted;
-exports.quantile          = quantile;
-exports.median            = median;
-exports.root_mean_squared = root_mean_squared;
-exports.min_sorted        = min_sorted;
+exports.max              = max;
+exports.min              = min;
+exports.product          = product;
+exports.sum_simple       = sum_simple;
+exports.mean             = mean;
+exports.sort             = sort;
+exports.quantile_sorted  = quantile_sorted;
+exports.quantile         = quantile;
+exports.median           = median;
+exports.root_mean_square = root_mean_square;
+exports.min_sorted       = min_sorted;
 /* No side effect */

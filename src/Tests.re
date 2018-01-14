@@ -85,11 +85,11 @@ let median_result = {
   ("Stats.median", result === expectation, expectation, result);
 };
 
-let root_mean_squared_result = {
+let root_mean_square_result = {
   let list = [(-1.), 1., (-1.), 1.];
-  let result = Stats.root_mean_squared(list);
+  let result = Stats.root_mean_square(list);
   let expectation = 1.;
-  ("Stats.root_mean_squared", result === expectation, expectation, result);
+  ("Stats.root_mean_square", result === expectation, expectation, result);
 };
 
 let min_sorted_result = {

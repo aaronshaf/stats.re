@@ -277,7 +277,7 @@ var median_result = /* tuple */[
   result$10
 ];
 
-var result$11 = Stats.root_mean_squared(/* :: */[
+var result$11 = Stats.root_mean_square(/* :: */[
       -1,
       /* :: */[
         1,
@@ -291,11 +291,11 @@ var result$11 = Stats.root_mean_squared(/* :: */[
       ]
     ]);
 
-var root_mean_squared_result_001 = +(result$11 === 1);
+var root_mean_square_result_001 = +(result$11 === 1);
 
-var root_mean_squared_result = /* tuple */[
-  "Stats.root_mean_squared",
-  root_mean_squared_result_001,
+var root_mean_square_result = /* tuple */[
+  "Stats.root_mean_square",
+  root_mean_square_result_001,
   1,
   result$11
 ];
@@ -326,17 +326,17 @@ var min_sorted_result = /* tuple */[
   result$12
 ];
 
-exports.max_result               = max_result;
-exports.product_result           = product_result;
-exports.sum_simple_result        = sum_simple_result;
-exports.mean_result1             = mean_result1;
-exports.quantile_sorted_result1  = quantile_sorted_result1;
-exports.quantile_sorted_result2  = quantile_sorted_result2;
-exports.quantile_sorted_result3  = quantile_sorted_result3;
-exports.quantile_sorted_result4  = quantile_sorted_result4;
-exports.quantile_sorted_result5  = quantile_sorted_result5;
-exports.quantile_result          = quantile_result;
-exports.median_result            = median_result;
-exports.root_mean_squared_result = root_mean_squared_result;
-exports.min_sorted_result        = min_sorted_result;
+exports.max_result              = max_result;
+exports.product_result          = product_result;
+exports.sum_simple_result       = sum_simple_result;
+exports.mean_result1            = mean_result1;
+exports.quantile_sorted_result1 = quantile_sorted_result1;
+exports.quantile_sorted_result2 = quantile_sorted_result2;
+exports.quantile_sorted_result3 = quantile_sorted_result3;
+exports.quantile_sorted_result4 = quantile_sorted_result4;
+exports.quantile_sorted_result5 = quantile_sorted_result5;
+exports.quantile_result         = quantile_result;
+exports.median_result           = median_result;
+exports.root_mean_square_result = root_mean_square_result;
+exports.min_sorted_result       = min_sorted_result;
 /* result Not a pure module */

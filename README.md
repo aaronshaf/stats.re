@@ -10,17 +10,22 @@ yarn install stats.re
 ```
 
 ```reason
-list(float) |> Stats.max;
+/* basics */
 list(float) |> Stats.min;
-list(float) |> Stats.min_sorted;
-list(float) |> Stats.product;
+list(float) |> Stats.max;
 list(float) |> Stats.sum_simple;
+list(float) |> Stats.quantile(quantile: float)
+list(float) |> Stats.product;
+
+/* sorted */
+list(float) |> Stats.sort;
+list(float) |> Stats.min_sorted;
+list(float) |> Stats.quantile_sorted(quantile: float);
+
+/* measures of central tendency */
 list(float) |> Stats.mean;
 list(float) |> Stats.median;
-list(float) |> Stats.quantile(quantile: float)
-list(float) |> Stats.quantile_sorted(quantile: float);
 list(float) |> Stats.root_mean_squared;
-list(float) |> Stats.sort;
 ```
 
 ## Dev
