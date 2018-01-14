@@ -1,3 +1,5 @@
+Statics module in Reason. Inspired by [simple-statistics](https://github.com/simple-statistics/simple-statistics). Help me add more functions :-)
+
 ## Usage
 
 ```bash
@@ -35,6 +37,3 @@ yarn start
 # open http://localhost:1234
 # edit src/Stats.re
 ```
-
-Inspired by [simple-statistics](https://github.com/simple-statistics/simple-statistics).
-Help me add more functions :-)
