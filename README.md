@@ -1,4 +1,4 @@
-Statistics module in Reason. Inspired by [simple-statistics](https://github.com/simple-statistics/simple-statistics). Help me add more functions :-)
+Statistics module written in Reason. Inspired by [simple-statistics](https://github.com/simple-statistics/simple-statistics). Help me add more functions :-)
 
 ## Usage
 
@@ -26,6 +26,7 @@ list(float) |> Stats.quantile_sorted(quantile: float);
 
 /* measures of central tendency */
 list(float) |> Stats.mean;
+float |> Stats.add_to_mean(mean: string, listLength: int);
 list(float) |> Stats.median;
 list(float) |> Stats.root_mean_squared;
 ```

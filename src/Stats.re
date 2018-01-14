@@ -59,3 +59,6 @@ let root_mean_square = (x: list(float)) => {
 };
 
 let min_sorted = (x: list(float)) => List.hd(x);
+
+let add_to_mean = (mean, listLength, newValue) =>
+  mean +. (newValue -. mean) /. (float_of_int(listLength) +. 1.);

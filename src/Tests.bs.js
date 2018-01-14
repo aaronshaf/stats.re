@@ -326,6 +326,17 @@ var min_sorted_result = /* tuple */[
   result$12
 ];
 
+var result$13 = Stats.add_to_mean(14, 5, 53);
+
+var add_to_mean_result_001 = +(result$13 === 20.5);
+
+var add_to_mean_result = /* tuple */[
+  "Stats.add_to_mean",
+  add_to_mean_result_001,
+  20.5,
+  result$13
+];
+
 exports.max_result              = max_result;
 exports.product_result          = product_result;
 exports.sum_simple_result       = sum_simple_result;
@@ -339,4 +350,5 @@ exports.quantile_result         = quantile_result;
 exports.median_result           = median_result;
 exports.root_mean_square_result = root_mean_square_result;
 exports.min_sorted_result       = min_sorted_result;
+exports.add_to_mean_result      = add_to_mean_result;
 /* result Not a pure module */

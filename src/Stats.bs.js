@@ -78,6 +78,10 @@ function root_mean_square(x) {
 
 var min_sorted = List.hd;
 
+function add_to_mean(mean, listLength, newValue) {
+  return mean + (newValue - mean) / (listLength + 1);
+}
+
 exports.max              = max;
 exports.min              = min;
 exports.product          = product;
@@ -89,4 +93,5 @@ exports.quantile         = quantile;
 exports.median           = median;
 exports.root_mean_square = root_mean_square;
 exports.min_sorted       = min_sorted;
+exports.add_to_mean      = add_to_mean;
 /* No side effect */
