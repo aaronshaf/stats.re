@@ -27,7 +27,7 @@ let sort = (x: list(float)) =>
   );
 
 /* probably did unnecessary float <-> int stuff. needs review. */
-let quantile_sorted = (x: list(float), quantile: float) => {
+let quantile_sorted = (quantile: float, x: list(float)) => {
   let length = List.length(x);
   let is_quantile_integer = float_of_int(int_of_float(quantile)) === quantile;
   let index = float_of_int(length) *. quantile;
@@ -44,6 +44,13 @@ let quantile_sorted = (x: list(float), quantile: float) => {
     List.nth(x, int_of_float(index));
   };
 };
+
+let quantile = (quantile: float, x: list(float)) => {
+  let sorted_list = sort(x);
+  quantile_sorted(quantile, sorted_list);
+};
+
+let median = (x: list(float)) => quantile(0.5, x);
 
 let root_mean_squared = (x: list(float)) => {
   let sumOfSquares =

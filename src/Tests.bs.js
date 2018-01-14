@@ -95,7 +95,7 @@ var mean_result1 = /* tuple */[
   result$3
 ];
 
-var result$4 = Stats.quantile_sorted(/* :: */[
+var result$4 = Stats.quantile_sorted(0, /* :: */[
       0,
       /* :: */[
         1,
@@ -110,7 +110,7 @@ var result$4 = Stats.quantile_sorted(/* :: */[
           ]
         ]
       ]
-    ], 0);
+    ]);
 
 var quantile_sorted_result1_001 = +(result$4 === 0);
 
@@ -121,7 +121,7 @@ var quantile_sorted_result1 = /* tuple */[
   result$4
 ];
 
-var result$5 = Stats.quantile_sorted(/* :: */[
+var result$5 = Stats.quantile_sorted(0.25, /* :: */[
       0,
       /* :: */[
         1,
@@ -136,7 +136,7 @@ var result$5 = Stats.quantile_sorted(/* :: */[
           ]
         ]
       ]
-    ], 0.25);
+    ]);
 
 var quantile_sorted_result2_001 = +(result$5 === 1);
 
@@ -147,7 +147,7 @@ var quantile_sorted_result2 = /* tuple */[
   result$5
 ];
 
-var result$6 = Stats.quantile_sorted(/* :: */[
+var result$6 = Stats.quantile_sorted(0.5, /* :: */[
       0,
       /* :: */[
         1,
@@ -162,7 +162,7 @@ var result$6 = Stats.quantile_sorted(/* :: */[
           ]
         ]
       ]
-    ], 0.5);
+    ]);
 
 var quantile_sorted_result3_001 = +(result$6 === 2);
 
@@ -173,7 +173,7 @@ var quantile_sorted_result3 = /* tuple */[
   result$6
 ];
 
-var result$7 = Stats.quantile_sorted(/* :: */[
+var result$7 = Stats.quantile_sorted(0.75, /* :: */[
       0,
       /* :: */[
         1,
@@ -188,7 +188,7 @@ var result$7 = Stats.quantile_sorted(/* :: */[
           ]
         ]
       ]
-    ], 0.75);
+    ]);
 
 var quantile_sorted_result4_001 = +(result$7 === 3);
 
@@ -199,7 +199,7 @@ var quantile_sorted_result4 = /* tuple */[
   result$7
 ];
 
-var result$8 = Stats.quantile_sorted(/* :: */[
+var result$8 = Stats.quantile_sorted(1, /* :: */[
       0,
       /* :: */[
         1,
@@ -214,7 +214,7 @@ var result$8 = Stats.quantile_sorted(/* :: */[
           ]
         ]
       ]
-    ], 1);
+    ]);
 
 var quantile_sorted_result5_001 = +(result$8 === 4);
 
@@ -225,7 +225,59 @@ var quantile_sorted_result5 = /* tuple */[
   result$8
 ];
 
-var result$9 = Stats.root_mean_squared(/* :: */[
+var result$9 = Stats.quantile(0.75, /* :: */[
+      3,
+      /* :: */[
+        0,
+        /* :: */[
+          1,
+          /* :: */[
+            2,
+            /* :: */[
+              4,
+              /* [] */0
+            ]
+          ]
+        ]
+      ]
+    ]);
+
+var quantile_result_001 = +(result$9 === 3);
+
+var quantile_result = /* tuple */[
+  "Stats.quantile",
+  quantile_result_001,
+  3,
+  result$9
+];
+
+var result$10 = Stats.median(/* :: */[
+      0,
+      /* :: */[
+        1,
+        /* :: */[
+          2,
+          /* :: */[
+            3,
+            /* :: */[
+              4,
+              /* [] */0
+            ]
+          ]
+        ]
+      ]
+    ]);
+
+var median_result_001 = +(result$10 === 2);
+
+var median_result = /* tuple */[
+  "Stats.median",
+  median_result_001,
+  2,
+  result$10
+];
+
+var result$11 = Stats.root_mean_squared(/* :: */[
       -1,
       /* :: */[
         1,
@@ -239,16 +291,16 @@ var result$9 = Stats.root_mean_squared(/* :: */[
       ]
     ]);
 
-var root_mean_squared_result_001 = +(result$9 === 1);
+var root_mean_squared_result_001 = +(result$11 === 1);
 
 var root_mean_squared_result = /* tuple */[
   "Stats.root_mean_squared",
   root_mean_squared_result_001,
   1,
-  result$9
+  result$11
 ];
 
-var result$10 = Stats.min_sorted(/* :: */[
+var result$12 = Stats.min_sorted(/* :: */[
       0,
       /* :: */[
         1,
@@ -265,13 +317,13 @@ var result$10 = Stats.min_sorted(/* :: */[
       ]
     ]);
 
-var min_sorted_001 = +(result$10 === 0);
+var min_sorted_result_001 = +(result$12 === 0);
 
-var min_sorted = /* tuple */[
+var min_sorted_result = /* tuple */[
   "Stats.min_sorted",
-  min_sorted_001,
+  min_sorted_result_001,
   0,
-  result$10
+  result$12
 ];
 
 exports.max_result               = max_result;
@@ -283,6 +335,8 @@ exports.quantile_sorted_result2  = quantile_sorted_result2;
 exports.quantile_sorted_result3  = quantile_sorted_result3;
 exports.quantile_sorted_result4  = quantile_sorted_result4;
 exports.quantile_sorted_result5  = quantile_sorted_result5;
+exports.quantile_result          = quantile_result;
+exports.median_result            = median_result;
 exports.root_mean_squared_result = root_mean_squared_result;
-exports.min_sorted               = min_sorted;
+exports.min_sorted_result        = min_sorted_result;
 /* result Not a pure module */

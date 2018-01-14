@@ -28,14 +28,14 @@ let mean_result1 = {
 
 let quantile_sorted_result1 = {
   let list = [0., 1., 2., 3., 4.];
-  let result = Stats.quantile_sorted(list, 0.);
+  let result = list |> Stats.quantile_sorted(0.);
   let expectation = 0.;
   ("Stats.quantile_sorted (0.)", result === expectation, expectation, result);
 };
 
 let quantile_sorted_result2 = {
   let list = [0., 1., 2., 3., 4.];
-  let result = Stats.quantile_sorted(list, 0.25);
+  let result = list |> Stats.quantile_sorted(0.25);
   let expectation = 1.;
   (
     "Stats.quantile_sorted (0.25)",
@@ -47,14 +47,14 @@ let quantile_sorted_result2 = {
 
 let quantile_sorted_result3 = {
   let list = [0., 1., 2., 3., 4.];
-  let result = Stats.quantile_sorted(list, 0.5);
+  let result = list |> Stats.quantile_sorted(0.5);
   let expectation = 2.;
   ("Stats.quantile_sorted (0.5)", result === expectation, expectation, result);
 };
 
 let quantile_sorted_result4 = {
   let list = [0., 1., 2., 3., 4.];
-  let result = Stats.quantile_sorted(list, 0.75);
+  let result = list |> Stats.quantile_sorted(0.75);
   let expectation = 3.;
   (
     "Stats.quantile_sorted (0.75)",
@@ -66,9 +66,23 @@ let quantile_sorted_result4 = {
 
 let quantile_sorted_result5 = {
   let list = [0., 1., 2., 3., 4.];
-  let result = Stats.quantile_sorted(list, 1.);
+  let result = list |> Stats.quantile_sorted(1.);
   let expectation = 4.;
   ("Stats.quantile_sorted (1.)", result === expectation, expectation, result);
+};
+
+let quantile_result = {
+  let list = [3., 0., 1., 2., 4.];
+  let result = list |> Stats.quantile(0.75);
+  let expectation = 3.;
+  ("Stats.quantile", result === expectation, expectation, result);
+};
+
+let median_result = {
+  let list = [0., 1., 2., 3., 4.];
+  let result = Stats.median(list);
+  let expectation = 2.;
+  ("Stats.median", result === expectation, expectation, result);
 };
 
 let root_mean_squared_result = {
@@ -78,7 +92,7 @@ let root_mean_squared_result = {
   ("Stats.root_mean_squared", result === expectation, expectation, result);
 };
 
-let min_sorted = {
+let min_sorted_result = {
   let list = [0., 1., 2., 3., 4.];
   let result = Stats.min_sorted(list);
   let expectation = 0.;

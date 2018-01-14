@@ -41,7 +41,7 @@ function sort(x) {
               }), x);
 }
 
-function quantile_sorted(x, quantile) {
+function quantile_sorted(quantile, x) {
   var length = List.length(x);
   var is_quantile_integer = +((quantile | 0) === quantile);
   var index = length * quantile;
@@ -60,6 +60,15 @@ function quantile_sorted(x, quantile) {
   }
 }
 
+function quantile(quantile$1, x) {
+  var sorted_list = sort(x);
+  return quantile_sorted(quantile$1, sorted_list);
+}
+
+function median(x) {
+  return quantile(0.5, x);
+}
+
 function root_mean_squared(x) {
   var sumOfSquares = ListLabels.fold_left((function (prev, b) {
           return prev + Math.pow(b, 2);
@@ -76,6 +85,8 @@ exports.sum_simple        = sum_simple;
 exports.mean              = mean;
 exports.sort              = sort;
 exports.quantile_sorted   = quantile_sorted;
+exports.quantile          = quantile;
+exports.median            = median;
 exports.root_mean_squared = root_mean_squared;
 exports.min_sorted        = min_sorted;
 /* No side effect */
