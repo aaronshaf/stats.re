@@ -21,9 +21,10 @@ Stats.quantile_sorted(x: list(float), quantile: float)
 
 ## Dev
 
-```
+```bash
 yarn start
-parcel index.html
+# open http://localhost:1234
+# edit src/Stats.re
 ```
 
 Inspired by [simple-statistics](https://github.com/simple-statistics/simple-statistics).
