@@ -248,6 +248,32 @@ var root_mean_squared_result = /* tuple */[
   result$9
 ];
 
+var result$10 = Stats.min_sorted(/* :: */[
+      0,
+      /* :: */[
+        1,
+        /* :: */[
+          2,
+          /* :: */[
+            3,
+            /* :: */[
+              4,
+              /* [] */0
+            ]
+          ]
+        ]
+      ]
+    ]);
+
+var min_sorted_001 = +(result$10 === 0);
+
+var min_sorted = /* tuple */[
+  "Stats.min_sorted",
+  min_sorted_001,
+  0,
+  result$10
+];
+
 exports.max_result               = max_result;
 exports.product_result           = product_result;
 exports.sum_simple_result        = sum_simple_result;
@@ -258,4 +284,5 @@ exports.quantile_sorted_result3  = quantile_sorted_result3;
 exports.quantile_sorted_result4  = quantile_sorted_result4;
 exports.quantile_sorted_result5  = quantile_sorted_result5;
 exports.root_mean_squared_result = root_mean_squared_result;
+exports.min_sorted               = min_sorted;
 /* result Not a pure module */

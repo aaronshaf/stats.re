@@ -67,6 +67,8 @@ function root_mean_squared(x) {
   return Math.sqrt(sumOfSquares / List.length(x));
 }
 
+var min_sorted = List.hd;
+
 exports.max               = max;
 exports.min               = min;
 exports.product           = product;
@@ -75,4 +77,5 @@ exports.mean              = mean;
 exports.sort              = sort;
 exports.quantile_sorted   = quantile_sorted;
 exports.root_mean_squared = root_mean_squared;
+exports.min_sorted        = min_sorted;
 /* No side effect */

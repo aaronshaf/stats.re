@@ -50,3 +50,5 @@ let root_mean_squared = (x: list(float)) => {
     ListLabels.fold_left(~f=(prev, b) => prev +. b ** 2., ~init=0., x);
   sumOfSquares /. float_of_int(List.length(x)) |> sqrt;
 };
+
+let min_sorted = (x: list(float)) => List.hd(x);

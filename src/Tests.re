@@ -77,3 +77,10 @@ let root_mean_squared_result = {
   let expectation = 1.;
   ("Stats.root_mean_squared", result === expectation, expectation, result);
 };
+
+let min_sorted = {
+  let list = [0., 1., 2., 3., 4.];
+  let result = Stats.min_sorted(list);
+  let expectation = 0.;
+  ("Stats.min_sorted", result === expectation, expectation, result);
+};

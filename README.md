@@ -18,6 +18,7 @@ Stats.mean(x: list(float));
 Stats.sort(x: list(float));
 Stats.quantile_sorted(x: list(float), quantile: float);
 Stats.root_mean_squared(x: list(float));
+Stats.min_sorted(x: list(float));
 ```
 
 ## Dev
