@@ -42,14 +42,14 @@ ArrayStats.root_mean_squared(x: array(float)) => float;
 
 ```reason
 /* basics */
-ListStats.min(x: array(float)) => float;
-ListStats.max(x: array(float)) => float;
-ListStats.sum_simple(x: array(float)) => float;
-ListStats.quantile(quantile: float, x: array(float)) => float;
-ListStats.product(x: array(float)) => float;
+ListStats.min(x: list(float)) => float;
+ListStats.max(x: list(float)) => float;
+ListStats.sum_simple(x: list(float)) => float;
+ListStats.quantile(quantile: float, x: list(float)) => float;
+ListStats.product(x: list(float)) => float;
 
 /* sorted */
-ListStats.sort(x: list(float)) => array(float);
+ListStats.sort(x: list(float)) => list(float);
 ListStats.min_sorted(x: list(float)) => float;
 ListStats.quantile_sorted(quantile: float, x: list(float)) => float;
 
