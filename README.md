@@ -67,6 +67,16 @@ yarn start
 # edit src/Stats.re
 ```
 
+## Todo
+
+* mode
+* harmonicMean
+* geometricMean
+* variance
+* interquartileRange
+
+See more [here](https://simplestatistics.org/docs/).
+
 ## See also
 
 * [owl](https://github.com/ryanrhymes/owl) - "numerical library: dense and sparse matrix, linear algebra, regressions, maths and stats functions"
