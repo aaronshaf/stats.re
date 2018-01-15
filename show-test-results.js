@@ -1,7 +1,16 @@
 import { html, render } from 'lit-html'
-import tests from './src/Tests.bs.js'
+import tests1 from './src/StatsTests.bs.js'
+import tests2 from './src/ListStatsTests.bs.js'
+import tests3 from './src/ArrayStatsTests.bs.js'
 
-render(renderResults(Object.values(tests)), document.getElementById('results'))
+render(
+  renderResults([
+    ...Object.values(tests1),
+    ...Object.values(tests2),
+    ...Object.values(tests3)
+  ]),
+  document.getElementById('results')
+)
 
 function renderExplanation(expectation, result) {
   return html`${JSON.stringify(expectation)} != ${JSON.stringify(result)}`

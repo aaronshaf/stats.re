@@ -11,24 +11,52 @@ yarn install stats.re
 "bs-dependencies": ["stats"]
 ```
 
+### Stats
+
+```reason
+Stats.add_to_mean(mean: float, listLength: float, newValue: float) => float;
+```
+
+### ArrayStats
+
 ```reason
 /* basics */
-list(float) |> Stats.min;
-list(float) |> Stats.max;
-list(float) |> Stats.sum_simple;
-list(float) |> Stats.quantile(quantile: float)
-list(float) |> Stats.product;
+ArrayStats.min(x: array(float)) => float;
+ArrayStats.max(x: array(float)) => float;
+ArrayStats.sum_simple(x: array(float)) => float;
+ArrayStats.quantile(quantile: float, x: array(float)) => float;
+ArrayStats.product(x: array(float)) => float;
 
 /* sorted */
-list(float) |> Stats.sort;
-list(float) |> Stats.min_sorted;
-list(float) |> Stats.quantile_sorted(quantile: float);
+ArrayStats.sort(x: array(float)) => array(float);
+ArrayStats.min_sorted(x: array(float)) => float;
+ArrayStats.quantile_sorted(quantile: float, x: array(float)) => float;
 
 /* measures of central tendency */
-list(float) |> Stats.mean;
-float |> Stats.add_to_mean(mean: string, listLength: int);
-list(float) |> Stats.median;
-list(float) |> Stats.root_mean_squared;
+ArrayStats.mean(x: array(float)) => float;
+ArrayStats.median(x: array(float)) => float;
+ArrayStats.root_mean_squared(x: array(float)) => float;
+```
+
+### ListStats
+
+```reason
+/* basics */
+ListStats.min(x: array(float)) => float;
+ListStats.max(x: array(float)) => float;
+ListStats.sum_simple(x: array(float)) => float;
+ListStats.quantile(quantile: float, x: array(float)) => float;
+ListStats.product(x: array(float)) => float;
+
+/* sorted */
+ListStats.sort(x: list(float)) => array(float);
+ListStats.min_sorted(x: list(float)) => float;
+ListStats.quantile_sorted(quantile: float, x: list(float)) => float;
+
+/* measures of central tendency */
+ListStats.mean(x: list(float)) => float;
+ListStats.median(x: list(float)) => float;
+ListStats.root_mean_squared(x: list(float)) => float;
 ```
 
 ## Dev
@@ -38,3 +66,7 @@ yarn start
 # open http://localhost:1234
 # edit src/Stats.re
 ```
+
+## See also
+
+* [owl](https://github.com/ryanrhymes/owl) - "numerical library: dense and sparse matrix, linear algebra, regressions, maths and stats functions"
