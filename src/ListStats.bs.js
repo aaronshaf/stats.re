@@ -78,15 +78,29 @@ function root_mean_square(x) {
 
 var min_sorted = List.hd;
 
-exports.max              = max;
-exports.min              = min;
-exports.product          = product;
-exports.sum_simple       = sum_simple;
-exports.mean             = mean;
-exports.sort             = sort;
-exports.quantile_sorted  = quantile_sorted;
-exports.quantile         = quantile;
-exports.median           = median;
-exports.root_mean_square = root_mean_square;
-exports.min_sorted       = min_sorted;
+function sum_nth_power_deviations(x, n) {
+  var meanValue = mean(x);
+  return List.fold_left((function (prev, current) {
+                console.log(current);
+                return prev + Math.pow(current - meanValue, n);
+              }), 0, x);
+}
+
+function variance(x) {
+  return sum_nth_power_deviations(x, 2) / List.length(x);
+}
+
+exports.max                      = max;
+exports.min                      = min;
+exports.product                  = product;
+exports.sum_simple               = sum_simple;
+exports.mean                     = mean;
+exports.sort                     = sort;
+exports.quantile_sorted          = quantile_sorted;
+exports.quantile                 = quantile;
+exports.median                   = median;
+exports.root_mean_square         = root_mean_square;
+exports.min_sorted               = min_sorted;
+exports.sum_nth_power_deviations = sum_nth_power_deviations;
+exports.variance                 = variance;
 /* No side effect */

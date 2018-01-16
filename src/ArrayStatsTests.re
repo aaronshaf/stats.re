@@ -120,3 +120,10 @@ let min_sorted_result = {
   let expectation = 0.;
   ("ArrayStats.min_sorted", result === expectation, expectation, result);
 };
+
+let variance_result = {
+  let array = [|1., 2., 3., 4., 5., 6.|];
+  let result = ArrayStats.variance(array);
+  let expectation = 2.9166666666666665;
+  ("ListStats.min_sorted", result === expectation, expectation, result);
+};

@@ -263,6 +263,26 @@ var min_sorted_result = /* tuple */[
   result$13
 ];
 
+var array$14 = /* float array */[
+  1,
+  2,
+  3,
+  4,
+  5,
+  6
+];
+
+var result$14 = ArrayStats.variance(array$14);
+
+var variance_result_001 = +(result$14 === 2.9166666666666665);
+
+var variance_result = /* tuple */[
+  "ListStats.min_sorted",
+  variance_result_001,
+  2.9166666666666665,
+  result$14
+];
+
 exports.max_result              = max_result;
 exports.min_result              = min_result;
 exports.product_result          = product_result;
@@ -277,4 +297,5 @@ exports.quantile_result         = quantile_result;
 exports.median_result           = median_result;
 exports.root_mean_square_result = root_mean_square_result;
 exports.min_sorted_result       = min_sorted_result;
+exports.variance_result         = variance_result;
 /* result Not a pure module */

@@ -14,5 +14,17 @@ var add_to_mean_result = /* tuple */[
   result
 ];
 
+var result$1 = Stats.Utils[/* factorial */0](13);
+
+var factorial_result_001 = +(result$1 === 1932053504);
+
+var factorial_result = /* tuple */[
+  "Stats.Utils.factorial",
+  factorial_result_001,
+  1932053504,
+  result$1
+];
+
 exports.add_to_mean_result = add_to_mean_result;
+exports.factorial_result   = factorial_result;
 /* result Not a pure module */

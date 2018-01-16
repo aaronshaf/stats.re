@@ -72,7 +72,6 @@ yarn start
 * mode
 * harmonicMean
 * geometricMean
-* variance
 * interquartileRange
 
 See more [here](https://simplestatistics.org/docs/).

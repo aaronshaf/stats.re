@@ -62,3 +62,15 @@ let root_mean_square = (x: array(float)) => {
 };
 
 let min_sorted = (x: array(float)) => x[0];
+
+let sum_nth_power_deviations = (x: array(float), n: float) => {
+  let meanValue = mean(x);
+  Array.fold_left(
+    (prev, current) => prev +. (current -. meanValue) ** n,
+    0.,
+    x
+  );
+};
+
+let variance = (x: array(float)) =>
+  sum_nth_power_deviations(x, 2.) /. float_of_int(Array.length(x));

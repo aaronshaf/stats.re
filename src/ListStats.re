@@ -60,3 +60,18 @@ let root_mean_square = (x: list(float)) => {
 };
 
 let min_sorted = (x: list(float)) => List.hd(x);
+
+let sum_nth_power_deviations = (x: list(float), n: float) => {
+  let meanValue = mean(x);
+  List.fold_left(
+    (prev, current) => {
+      Js.log(current);
+      prev +. (current -. meanValue) ** n;
+    },
+    0.,
+    x
+  );
+};
+
+let variance = (x: list(float)) =>
+  sum_nth_power_deviations(x, 2.) /. float_of_int(List.length(x));
