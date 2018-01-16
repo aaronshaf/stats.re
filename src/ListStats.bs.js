@@ -81,7 +81,6 @@ var min_sorted = List.hd;
 function sum_nth_power_deviations(x, n) {
   var meanValue = mean(x);
   return List.fold_left((function (prev, current) {
-                console.log(current);
                 return prev + Math.pow(current - meanValue, n);
               }), 0, x);
 }
