@@ -211,40 +211,58 @@ var array$11 = /* float array */[
   0,
   1,
   2,
-  3,
   4
 ];
 
-var result$11 = ArrayStats.median(array$11);
+var result$11 = ArrayStats.interquartile_range(array$11);
 
-var median_result_001 = +(result$11 === 2);
+var interquartile_range_result_001 = +(result$11 === 2);
 
-var median_result = /* tuple */[
-  "ArrayStats.median",
-  median_result_001,
+var interquartile_range_result = /* tuple */[
+  "ArrayStats.interquartile_range",
+  interquartile_range_result_001,
   2,
   result$11
 ];
 
 var array$12 = /* float array */[
+  0,
+  1,
+  2,
+  3,
+  4
+];
+
+var result$12 = ArrayStats.median(array$12);
+
+var median_result_001 = +(result$12 === 2);
+
+var median_result = /* tuple */[
+  "ArrayStats.median",
+  median_result_001,
+  2,
+  result$12
+];
+
+var array$13 = /* float array */[
   -1,
   1,
   -1,
   1
 ];
 
-var result$12 = ArrayStats.root_mean_square(array$12);
+var result$13 = ArrayStats.root_mean_square(array$13);
 
-var root_mean_square_result_001 = +(result$12 === 1);
+var root_mean_square_result_001 = +(result$13 === 1);
 
 var root_mean_square_result = /* tuple */[
   "ArrayStats.root_mean_square",
   root_mean_square_result_001,
   1,
-  result$12
+  result$13
 ];
 
-var array$13 = /* float array */[
+var array$14 = /* float array */[
   0,
   1,
   2,
@@ -252,18 +270,18 @@ var array$13 = /* float array */[
   4
 ];
 
-var result$13 = ArrayStats.min_sorted(array$13);
+var result$14 = ArrayStats.min_sorted(array$14);
 
-var min_sorted_result_001 = +(result$13 === 0);
+var min_sorted_result_001 = +(result$14 === 0);
 
 var min_sorted_result = /* tuple */[
   "ArrayStats.min_sorted",
   min_sorted_result_001,
   0,
-  result$13
+  result$14
 ];
 
-var array$14 = /* float array */[
+var array$15 = /* float array */[
   1,
   2,
   3,
@@ -272,30 +290,31 @@ var array$14 = /* float array */[
   6
 ];
 
-var result$14 = ArrayStats.variance(array$14);
+var result$15 = ArrayStats.variance(array$15);
 
-var variance_result_001 = +(result$14 === 2.9166666666666665);
+var variance_result_001 = +(result$15 === 2.9166666666666665);
 
 var variance_result = /* tuple */[
-  "ListStats.min_sorted",
+  "ArrayStats.variance",
   variance_result_001,
   2.9166666666666665,
-  result$14
+  result$15
 ];
 
-exports.max_result              = max_result;
-exports.min_result              = min_result;
-exports.product_result          = product_result;
-exports.sum_simple_result       = sum_simple_result;
-exports.mean_result1            = mean_result1;
-exports.quantile_sorted_result1 = quantile_sorted_result1;
-exports.quantile_sorted_result2 = quantile_sorted_result2;
-exports.quantile_sorted_result3 = quantile_sorted_result3;
-exports.quantile_sorted_result4 = quantile_sorted_result4;
-exports.quantile_sorted_result5 = quantile_sorted_result5;
-exports.quantile_result         = quantile_result;
-exports.median_result           = median_result;
-exports.root_mean_square_result = root_mean_square_result;
-exports.min_sorted_result       = min_sorted_result;
-exports.variance_result         = variance_result;
+exports.max_result                 = max_result;
+exports.min_result                 = min_result;
+exports.product_result             = product_result;
+exports.sum_simple_result          = sum_simple_result;
+exports.mean_result1               = mean_result1;
+exports.quantile_sorted_result1    = quantile_sorted_result1;
+exports.quantile_sorted_result2    = quantile_sorted_result2;
+exports.quantile_sorted_result3    = quantile_sorted_result3;
+exports.quantile_sorted_result4    = quantile_sorted_result4;
+exports.quantile_sorted_result5    = quantile_sorted_result5;
+exports.quantile_result            = quantile_result;
+exports.interquartile_range_result = interquartile_range_result;
+exports.median_result              = median_result;
+exports.root_mean_square_result    = root_mean_square_result;
+exports.min_sorted_result          = min_sorted_result;
+exports.variance_result            = variance_result;
 /* result Not a pure module */

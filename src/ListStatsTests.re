@@ -100,6 +100,18 @@ let quantile_result = {
   ("ListStats.quantile", result === expectation, expectation, result);
 };
 
+let interquartile_range_result = {
+  let array = [0., 1., 2., 4.];
+  let result = array |> ListStats.interquartile_range;
+  let expectation = 2.;
+  (
+    "ListStats.interquartile_range",
+    result === expectation,
+    expectation,
+    result
+  );
+};
+
 let median_result = {
   let list = [0., 1., 2., 3., 4.];
   let result = ListStats.median(list);

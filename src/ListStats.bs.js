@@ -65,6 +65,10 @@ function quantile(quantile$1, x) {
   return quantile_sorted(quantile$1, sorted_list);
 }
 
+function interquartile_range(x) {
+  return quantile(0.75, x) - quantile(0.25, x);
+}
+
 function median(x) {
   return quantile(0.5, x);
 }
@@ -97,6 +101,7 @@ exports.mean                     = mean;
 exports.sort                     = sort;
 exports.quantile_sorted          = quantile_sorted;
 exports.quantile                 = quantile;
+exports.interquartile_range      = interquartile_range;
 exports.median                   = median;
 exports.root_mean_square         = root_mean_square;
 exports.min_sorted               = min_sorted;

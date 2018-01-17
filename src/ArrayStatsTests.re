@@ -100,6 +100,18 @@ let quantile_result = {
   ("ArrayStats.quantile", result === expectation, expectation, result);
 };
 
+let interquartile_range_result = {
+  let array = [|0., 1., 2., 4.|];
+  let result = array |> ArrayStats.interquartile_range;
+  let expectation = 2.;
+  (
+    "ArrayStats.interquartile_range",
+    result === expectation,
+    expectation,
+    result
+  );
+};
+
 let median_result = {
   let array = [|0., 1., 2., 3., 4.|];
   let result = ArrayStats.median(array);
@@ -125,5 +137,5 @@ let variance_result = {
   let array = [|1., 2., 3., 4., 5., 6.|];
   let result = ArrayStats.variance(array);
   let expectation = 2.9166666666666665;
-  ("ListStats.min_sorted", result === expectation, expectation, result);
+  ("ArrayStats.variance", result === expectation, expectation, result);
 };

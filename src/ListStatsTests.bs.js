@@ -274,7 +274,30 @@ var quantile_result = /* tuple */[
   result$10
 ];
 
-var result$11 = ListStats.median(/* :: */[
+var result$11 = ListStats.interquartile_range(/* :: */[
+      0,
+      /* :: */[
+        1,
+        /* :: */[
+          2,
+          /* :: */[
+            4,
+            /* [] */0
+          ]
+        ]
+      ]
+    ]);
+
+var interquartile_range_result_001 = +(result$11 === 2);
+
+var interquartile_range_result = /* tuple */[
+  "ListStats.interquartile_range",
+  interquartile_range_result_001,
+  2,
+  result$11
+];
+
+var result$12 = ListStats.median(/* :: */[
       0,
       /* :: */[
         1,
@@ -291,16 +314,16 @@ var result$11 = ListStats.median(/* :: */[
       ]
     ]);
 
-var median_result_001 = +(result$11 === 2);
+var median_result_001 = +(result$12 === 2);
 
 var median_result = /* tuple */[
   "ListStats.median",
   median_result_001,
   2,
-  result$11
+  result$12
 ];
 
-var result$12 = ListStats.root_mean_square(/* :: */[
+var result$13 = ListStats.root_mean_square(/* :: */[
       -1,
       /* :: */[
         1,
@@ -314,16 +337,16 @@ var result$12 = ListStats.root_mean_square(/* :: */[
       ]
     ]);
 
-var root_mean_square_result_001 = +(result$12 === 1);
+var root_mean_square_result_001 = +(result$13 === 1);
 
 var root_mean_square_result = /* tuple */[
   "ListStats.root_mean_square",
   root_mean_square_result_001,
   1,
-  result$12
+  result$13
 ];
 
-var result$13 = ListStats.min_sorted(/* :: */[
+var result$14 = ListStats.min_sorted(/* :: */[
       0,
       /* :: */[
         1,
@@ -340,16 +363,16 @@ var result$13 = ListStats.min_sorted(/* :: */[
       ]
     ]);
 
-var min_sorted_result_001 = +(result$13 === 0);
+var min_sorted_result_001 = +(result$14 === 0);
 
 var min_sorted_result = /* tuple */[
   "ListStats.min_sorted",
   min_sorted_result_001,
   0,
-  result$13
+  result$14
 ];
 
-var result$14 = ListStats.variance(/* :: */[
+var result$15 = ListStats.variance(/* :: */[
       1,
       /* :: */[
         2,
@@ -369,28 +392,29 @@ var result$14 = ListStats.variance(/* :: */[
       ]
     ]);
 
-var variance_result_001 = +(result$14 === 2.9166666666666665);
+var variance_result_001 = +(result$15 === 2.9166666666666665);
 
 var variance_result = /* tuple */[
   "ListStats.min_sorted",
   variance_result_001,
   2.9166666666666665,
-  result$14
+  result$15
 ];
 
-exports.max_result              = max_result;
-exports.min_result              = min_result;
-exports.product_result          = product_result;
-exports.sum_simple_result       = sum_simple_result;
-exports.mean_result1            = mean_result1;
-exports.quantile_sorted_result1 = quantile_sorted_result1;
-exports.quantile_sorted_result2 = quantile_sorted_result2;
-exports.quantile_sorted_result3 = quantile_sorted_result3;
-exports.quantile_sorted_result4 = quantile_sorted_result4;
-exports.quantile_sorted_result5 = quantile_sorted_result5;
-exports.quantile_result         = quantile_result;
-exports.median_result           = median_result;
-exports.root_mean_square_result = root_mean_square_result;
-exports.min_sorted_result       = min_sorted_result;
-exports.variance_result         = variance_result;
+exports.max_result                 = max_result;
+exports.min_result                 = min_result;
+exports.product_result             = product_result;
+exports.sum_simple_result          = sum_simple_result;
+exports.mean_result1               = mean_result1;
+exports.quantile_sorted_result1    = quantile_sorted_result1;
+exports.quantile_sorted_result2    = quantile_sorted_result2;
+exports.quantile_sorted_result3    = quantile_sorted_result3;
+exports.quantile_sorted_result4    = quantile_sorted_result4;
+exports.quantile_sorted_result5    = quantile_sorted_result5;
+exports.quantile_result            = quantile_result;
+exports.interquartile_range_result = interquartile_range_result;
+exports.median_result              = median_result;
+exports.root_mean_square_result    = root_mean_square_result;
+exports.min_sorted_result          = min_sorted_result;
+exports.variance_result            = variance_result;
 /* result Not a pure module */

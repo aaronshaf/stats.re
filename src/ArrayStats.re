@@ -53,6 +53,9 @@ let quantile = (quantile: float, x: array(float)) => {
   quantile_sorted(quantile, sorted_array);
 };
 
+let interquartile_range = (x: array(float)) =>
+  quantile(0.75, x) -. quantile(0.25, x);
+
 let median = (x: array(float)) => quantile(0.5, x);
 
 let root_mean_square = (x: array(float)) => {
