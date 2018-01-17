@@ -38,7 +38,7 @@ ArrayStats.median(x: array(float)) => float;
 ArrayStats.root_mean_squared(x: array(float)) => float;
 ArrayStats.variance(x: array(float)) => float;
 
-/* measures of dispersion */]
+/* measures of dispersion */
 ArrayStats.interquartile_range(x: array(float)) => float
 ```
 
@@ -63,7 +63,7 @@ ListStats.median(x: list(float)) => float;
 ListStats.root_mean_squared(x: list(float)) => float;
 ListStats.variance(x: list(float)) => float;
 
-/* measures of dispersion */]
+/* measures of dispersion */
 ListStats.interquartile_range(x: array(float)) => float
 ```
 
