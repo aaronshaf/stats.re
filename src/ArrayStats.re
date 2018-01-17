@@ -10,8 +10,18 @@ let product = (x: array(float)) =>
 let sum_simple = (x: array(float)) =>
   ArrayLabels.fold_left(~f=(a, b) => a +. b, ~init=0., x);
 
-/* TODO: refactor with Lost.fold_left */
-let mean = (x: array(float)) => sum_simple(x) /. float_of_int(Array.length(x));
+let mean = (x: array(float)) => {
+  let (mean, _length) =
+    Array.fold_left(
+      ((previousMean, previousLength), valueToAdd) => (
+        Stats.Utils.add_to_mean(previousMean, previousLength, valueToAdd),
+        previousLength +. 1.
+      ),
+      (0., 0.),
+      x
+    );
+  mean;
+};
 
 let sort = (x: array(float)) => {
   let clonedArray = ArrayLabels.copy(x);
@@ -77,3 +87,16 @@ let sum_nth_power_deviations = (x: array(float), n: float) => {
 
 let variance = (x: array(float)) =>
   sum_nth_power_deviations(x, 2.) /. float_of_int(Array.length(x));
+
+let geometric_mean = (growthRates: array(float)) => {
+  let (growthRate, length) =
+    growthRates
+    |> Array.fold_left(
+         ((growthRate, length), current) => (
+           growthRate *. current,
+           length +. 1.
+         ),
+         (1., 0.)
+       );
+  growthRate ** (1. /. length);
+};

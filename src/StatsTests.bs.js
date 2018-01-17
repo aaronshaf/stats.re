@@ -3,7 +3,7 @@
 
 var Stats = require("./Stats.bs.js");
 
-var result = Stats.add_to_mean(14, 5, 53);
+var result = Stats.Utils[/* add_to_mean */0](14, 5, 53);
 
 var add_to_mean_result_001 = +(result === 20.5);
 
@@ -14,7 +14,7 @@ var add_to_mean_result = /* tuple */[
   result
 ];
 
-var result$1 = Stats.Utils[/* factorial */0](13);
+var result$1 = Stats.Utils[/* factorial */1](13);
 
 var factorial_result_001 = +(result$1 === 1932053504);
 

@@ -10,9 +10,24 @@ let product = (x: list(float)) =>
 let sum_simple = (x: list(float)) =>
   ListLabels.fold_left(~f=(a, b) => a +. b, ~init=0., x);
 
-/* TODO: refactor with Lost.fold_left */
-let mean = (x: list(float)) => sum_simple(x) /. float_of_int(List.length(x));
+let mean = (x: list(float)) => {
+  let (mean, _length) =
+    List.fold_left(
+      ((previousMean, previousLength), valueToAdd) => (
+        Stats.Utils.add_to_mean(previousMean, previousLength, valueToAdd),
+        previousLength +. 1.
+      ),
+      (0., 0.),
+      x
+    );
+  mean;
+};
 
+/*
+ for each:
+   x |> List.fold_left((prev, current) => , (0, 0) /* mean, length */,
+   add_to_mean(mean, listLength, newValue)
+ */
 let sort = (x: list(float)) =>
   ListLabels.fast_sort(
     ~cmp=
@@ -75,3 +90,16 @@ let sum_nth_power_deviations = (x: list(float), n: float) => {
 
 let variance = (x: list(float)) =>
   sum_nth_power_deviations(x, 2.) /. float_of_int(List.length(x));
+
+let geometric_mean = (growthRates: list(float)) => {
+  let (growthRate, length) =
+    growthRates
+    |> List.fold_left(
+         ((growthRate, length), current) => (
+           growthRate *. current,
+           length +. 1.
+         ),
+         (1., 0.)
+       );
+  growthRate ** (1. /. length);
+};

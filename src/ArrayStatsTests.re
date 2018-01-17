@@ -139,3 +139,14 @@ let variance_result = {
   let expectation = 2.9166666666666665;
   ("ArrayStats.variance", result === expectation, expectation, result);
 };
+
+let geometric_mean_result = {
+  let growthRates = [|1.80, 1.166666, 1.428571|];
+  let expectation =
+    growthRates |> Array.fold_left((prev, rate) => prev *. rate, 1.);
+  let averageGrowth = ArrayStats.geometric_mean(growthRates);
+  let averageGrowthRates = [|averageGrowth, averageGrowth, averageGrowth|];
+  let result =
+    averageGrowthRates |> Array.fold_left((prev, rate) => prev *. rate, 1.);
+  ("ArrayStats.geometric_mean", result === expectation, expectation, result);
+};

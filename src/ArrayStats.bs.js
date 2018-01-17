@@ -2,6 +2,7 @@
 'use strict';
 
 var $$Array     = require("bs-platform/lib/js/array.js");
+var Stats       = require("./Stats.bs.js");
 var Caml_array  = require("bs-platform/lib/js/caml_array.js");
 var Pervasives  = require("bs-platform/lib/js/pervasives.js");
 var ArrayLabels = require("bs-platform/lib/js/arrayLabels.js");
@@ -27,7 +28,16 @@ function sum_simple(x) {
 }
 
 function mean(x) {
-  return sum_simple(x) / x.length;
+  return $$Array.fold_left((function (param, valueToAdd) {
+                  var previousLength = param[1];
+                  return /* tuple */[
+                          Stats.Utils[/* add_to_mean */0](param[0], previousLength, valueToAdd),
+                          previousLength + 1
+                        ];
+                }), /* tuple */[
+                0,
+                0
+              ], x)[0];
 }
 
 function sort(x) {
@@ -98,6 +108,19 @@ function variance(x) {
   return sum_nth_power_deviations(x, 2) / x.length;
 }
 
+function geometric_mean(growthRates) {
+  var match = $$Array.fold_left((function (param, current) {
+          return /* tuple */[
+                  param[0] * current,
+                  param[1] + 1
+                ];
+        }), /* tuple */[
+        1,
+        0
+      ], growthRates);
+  return Math.pow(match[0], 1 / match[1]);
+}
+
 exports.max                      = max;
 exports.min                      = min;
 exports.product                  = product;
@@ -112,4 +135,5 @@ exports.root_mean_square         = root_mean_square;
 exports.min_sorted               = min_sorted;
 exports.sum_nth_power_deviations = sum_nth_power_deviations;
 exports.variance                 = variance;
+exports.geometric_mean           = geometric_mean;
 /* No side effect */

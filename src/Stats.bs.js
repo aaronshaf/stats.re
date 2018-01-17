@@ -15,8 +15,10 @@ function factorial(x) {
   }
 }
 
-var Utils = /* module */[/* factorial */factorial];
+var Utils = /* module */[
+  /* add_to_mean */add_to_mean,
+  /* factorial */factorial
+];
 
-exports.add_to_mean = add_to_mean;
-exports.Utils       = Utils;
+exports.Utils = Utils;
 /* No side effect */

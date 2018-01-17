@@ -2,6 +2,7 @@
 'use strict';
 
 var List       = require("bs-platform/lib/js/list.js");
+var Stats      = require("./Stats.bs.js");
 var ListLabels = require("bs-platform/lib/js/listLabels.js");
 var Pervasives = require("bs-platform/lib/js/pervasives.js");
 
@@ -26,7 +27,16 @@ function sum_simple(x) {
 }
 
 function mean(x) {
-  return sum_simple(x) / List.length(x);
+  return List.fold_left((function (param, valueToAdd) {
+                  var previousLength = param[1];
+                  return /* tuple */[
+                          Stats.Utils[/* add_to_mean */0](param[0], previousLength, valueToAdd),
+                          previousLength + 1
+                        ];
+                }), /* tuple */[
+                0,
+                0
+              ], x)[0];
 }
 
 function sort(x) {
@@ -93,6 +103,19 @@ function variance(x) {
   return sum_nth_power_deviations(x, 2) / List.length(x);
 }
 
+function geometric_mean(growthRates) {
+  var match = List.fold_left((function (param, current) {
+          return /* tuple */[
+                  param[0] * current,
+                  param[1] + 1
+                ];
+        }), /* tuple */[
+        1,
+        0
+      ], growthRates);
+  return Math.pow(match[0], 1 / match[1]);
+}
+
 exports.max                      = max;
 exports.min                      = min;
 exports.product                  = product;
@@ -107,4 +130,5 @@ exports.root_mean_square         = root_mean_square;
 exports.min_sorted               = min_sorted;
 exports.sum_nth_power_deviations = sum_nth_power_deviations;
 exports.variance                 = variance;
+exports.geometric_mean           = geometric_mean;
 /* No side effect */
