@@ -234,30 +234,35 @@ function sample_variance(x) {
 }
 
 function standard_deviation(x) {
+  return Math.sqrt(variance(x));
+}
+
+function sample_standard_deviation(x) {
   return Math.sqrt(sample_variance(x));
 }
 
-exports.max                      = max;
-exports.min                      = min;
-exports.product                  = product;
-exports.sum                      = sum;
-exports.sum_simple               = sum_simple;
-exports.mean                     = mean;
-exports.mean_fold                = mean_fold;
-exports.sort                     = sort;
-exports.quantile_sorted          = quantile_sorted;
-exports.quantile                 = quantile;
-exports.interquartile_range      = interquartile_range;
-exports.median                   = median;
-exports.root_mean_square         = root_mean_square;
-exports.min_sorted               = min_sorted;
-exports.sum_nth_power_deviations = sum_nth_power_deviations;
-exports.variance                 = variance;
-exports.geometric_mean           = geometric_mean;
-exports.mode_sorted              = mode_sorted;
-exports.mode                     = mode;
-exports.harmonic_mean            = harmonic_mean;
-exports.sample_skewness          = sample_skewness;
-exports.sample_variance          = sample_variance;
-exports.standard_deviation       = standard_deviation;
+exports.max                       = max;
+exports.min                       = min;
+exports.product                   = product;
+exports.sum                       = sum;
+exports.sum_simple                = sum_simple;
+exports.mean                      = mean;
+exports.mean_fold                 = mean_fold;
+exports.sort                      = sort;
+exports.quantile_sorted           = quantile_sorted;
+exports.quantile                  = quantile;
+exports.interquartile_range       = interquartile_range;
+exports.median                    = median;
+exports.root_mean_square          = root_mean_square;
+exports.min_sorted                = min_sorted;
+exports.sum_nth_power_deviations  = sum_nth_power_deviations;
+exports.variance                  = variance;
+exports.geometric_mean            = geometric_mean;
+exports.mode_sorted               = mode_sorted;
+exports.mode                      = mode;
+exports.harmonic_mean             = harmonic_mean;
+exports.sample_skewness           = sample_skewness;
+exports.sample_variance           = sample_variance;
+exports.standard_deviation        = standard_deviation;
+exports.sample_standard_deviation = sample_standard_deviation;
 /* No side effect */

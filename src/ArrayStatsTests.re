@@ -211,9 +211,21 @@ let sample_variance_result = {
 let standard_deviation_result = {
   let array = [|2., 4., 4., 4., 5., 5., 7., 9.|];
   let result = ArrayStats.standard_deviation(array);
+  let expectation = 2.;
+  (
+    "ArrayStats.standard_deviation",
+    result === expectation,
+    expectation,
+    result
+  );
+};
+
+let sample_standard_deviation_result = {
+  let array = [|2., 4., 4., 4., 5., 5., 7., 9.|];
+  let result = ArrayStats.sample_standard_deviation(array);
   let expectation = 2.138089935299395;
   (
-    "ListStats.standard_deviation",
+    "ArrayStats.sample_standard_deviation",
     result === expectation,
     expectation,
     result

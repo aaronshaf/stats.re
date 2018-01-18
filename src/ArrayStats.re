@@ -1,11 +1,11 @@
 let max = (x: array(float)) =>
-  ArrayLabels.fold_left(~f=(a, b) => max(a, b), ~init=x[0], x);
+  x |> ArrayLabels.fold_left(~f=(a, b) => max(a, b), ~init=x[0]);
 
 let min = (x: array(float)) =>
-  ArrayLabels.fold_left(~f=(a, b) => min(a, b), ~init=x[0], x);
+  x |> ArrayLabels.fold_left(~f=(a, b) => min(a, b), ~init=x[0]);
 
 let product = (x: array(float)) =>
-  ArrayLabels.fold_left(~f=(a, b) => a *. b, ~init=1., x);
+  x |> ArrayLabels.fold_left(~f=(a, b) => a *. b, ~init=1.);
 
 let sum = (x: array(float)) => {
   let (sum, _correction) = {
@@ -29,20 +29,20 @@ let sum = (x: array(float)) => {
 };
 
 let sum_simple = (x: array(float)) =>
-  ArrayLabels.fold_left(~f=(a, b) => a +. b, ~init=0., x);
+  x |> ArrayLabels.fold_left(~f=(a, b) => a +. b, ~init=0.);
 
 let mean = (x: array(float)) => sum(x) /. float_of_int(Array.length(x));
 
 let mean_fold = (x: array(float)) => {
   let (mean, _length) =
-    Array.fold_left(
-      ((previousMean, previousLength), valueToAdd) => (
-        Stats.Utils.add_to_mean(previousMean, previousLength, valueToAdd),
-        previousLength +. 1.
-      ),
-      (0., 0.),
-      x
-    );
+    x
+    |> Array.fold_left(
+         ((previousMean, previousLength), valueToAdd) => (
+           Stats.Utils.add_to_mean(previousMean, previousLength, valueToAdd),
+           previousLength +. 1.
+         ),
+         (0., 0.)
+       );
   mean;
 };
 
@@ -161,14 +161,14 @@ let mode = (x: array(float)) => sort(x) |> mode_sorted;
 
 let harmonic_mean = (x: array(float)) => {
   let (reciprocal_sum, length) =
-    Array.fold_left(
-      ((reciprocal_sum, length), current) => (
-        reciprocal_sum +. 1. /. current,
-        length +. 1.
-      ),
-      (0., 0.),
-      x
-    );
+    x
+    |> Array.fold_left(
+         ((reciprocal_sum, length), current) => (
+           reciprocal_sum +. 1. /. current,
+           length +. 1.
+         ),
+         (0., 0.)
+       );
   length /. reciprocal_sum;
 };
 
@@ -202,4 +202,7 @@ let sample_variance = (x: array(float)) => {
   sumSquaredDeviationsValue /. besselsCorrection;
 };
 
-let standard_deviation = (x: array(float)) => sample_variance(x) |> sqrt;
+let standard_deviation = (x: array(float)) => x |> variance |> sqrt;
+
+let sample_standard_deviation = (x: array(float)) =>
+  x |> sample_variance |> sqrt;

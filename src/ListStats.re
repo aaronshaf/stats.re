@@ -200,4 +200,7 @@ let sample_variance = (x: list(float)) => {
   sumSquaredDeviationsValue /. besselsCorrection;
 };
 
-let standard_deviation = (x: list(float)) => sample_variance(x) |> sqrt;
+let standard_deviation = (x: list(float)) => x |> variance |> sqrt;
+
+let sample_standard_deviation = (x: list(float)) =>
+  x |> sample_variance |> sqrt;
