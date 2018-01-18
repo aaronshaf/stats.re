@@ -18,12 +18,6 @@ let result = ArrayStats.mean(array); /* 2.85 */
 
 The best docs are the tests. See [ArrayStatsTests.re](https://github.com/aaronshaf/stats.re/blob/master/src/ArrayStatsTests.re) and [ListStatsTests.re](https://github.com/aaronshaf/stats.re/blob/master/src/ListStatsTests.re).
 
-### Stats
-
-```reason
-Stats.add_to_mean(mean: float, listLength: float, newValue: float) => float;
-```
-
 ### ArrayStats (mirrors ListStats)
 
 ```reason
@@ -52,6 +46,12 @@ ArrayStats.sample_skewness(x: array(float)) => float;
 
 /* measures of dispersion */
 ArrayStats.interquartile_range(x: array(float)) => float
+```
+
+### Utils
+
+```reason
+Stats.Utils.add_to_mean(mean: float, listLength: float, newValue: float) => float;
 ```
 
 ## Dev
