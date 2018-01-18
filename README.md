@@ -16,7 +16,7 @@ let array = [|1.2, 2.3, 3.4, 4.5|];
 let result = ArrayStats.mean(array); /* 2.85 */
 ```
 
-The best docs are the tests. See [ArrayStatsTests.re](https://github.com/aaronshaf/stats.re/blob/master/src/ArrayStatsTests.re) and [ListStatsTests.re](https://github.com/aaronshaf/stats.re/blob/master/src/ListStatsTests.re).
+The best example are the tests. See [ArrayStatsTests.re](https://github.com/aaronshaf/stats.re/blob/master/src/ArrayStatsTests.re) and [ListStatsTests.re](https://github.com/aaronshaf/stats.re/blob/master/src/ListStatsTests.re).
 
 ### ArrayStats (mirrors ListStats)
 
