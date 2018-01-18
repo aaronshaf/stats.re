@@ -11,7 +11,7 @@ yarn install stats.re
 "bs-dependencies": ["stats"]
 ```
 
-```
+```reason
 let array = [|1.2, 2.3, 3.4, 4.5|];
 let result = ArrayStats.mean(array);
 ```
