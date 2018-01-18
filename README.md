@@ -45,6 +45,8 @@ ArrayStats.sample_skewness(x: array(float)) => float;
 
 /* measures of dispersion */
 ArrayStats.variance(x: array(float)) => float;
+ArrayStats.sample_variance(x: array(float)) => float;
+ArrayStats.standard_deviation(x: array(float)) => float;
 ArrayStats.interquartile_range(x: array(float)) => float;
 ArrayStats.sum_nth_power_deviations(x: array(float), n: float) => float;
 ```

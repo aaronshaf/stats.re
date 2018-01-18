@@ -200,3 +200,22 @@ let sum_nth_power_deviations_result = {
     result
   );
 };
+
+let sample_variance_result = {
+  let array = [|1., 2., 3., 4., 5.|];
+  let result = ArrayStats.sample_variance(array);
+  let expectation = 2.5;
+  ("ArrayStats.sample_variance", result === expectation, expectation, result);
+};
+
+let standard_deviation_result = {
+  let array = [|2., 4., 4., 4., 5., 5., 7., 9.|];
+  let result = ArrayStats.standard_deviation(array);
+  let expectation = 2.138089935299395;
+  (
+    "ListStats.standard_deviation",
+    result === expectation,
+    expectation,
+    result
+  );
+};

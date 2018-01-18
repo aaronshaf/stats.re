@@ -46,11 +46,6 @@ let mean_fold = (x: list(float)) => {
   mean;
 };
 
-/*
- for each:
-   x |> List.fold_left((prev, current) => , (0, 0) /* mean, length */,
-   add_to_mean(mean, listLength, newValue)
- */
 let sort = (x: list(float)) =>
   ListLabels.fast_sort(
     ~cmp=
@@ -198,3 +193,11 @@ let sample_skewness = (x: list(float)) => {
   *. sum_cubed_deviations
   /. ((length -. 1.) *. (length -. 2.) *. cubedS);
 };
+
+let sample_variance = (x: list(float)) => {
+  let sumSquaredDeviationsValue = sum_nth_power_deviations(x, 2.);
+  let besselsCorrection = float_of_int(List.length(x)) -. 1.;
+  sumSquaredDeviationsValue /. besselsCorrection;
+};
+
+let standard_deviation = (x: list(float)) => sample_variance(x) |> sqrt;

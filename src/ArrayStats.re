@@ -195,3 +195,11 @@ let sample_skewness = (x: array(float)) => {
   *. sum_cubed_deviations
   /. ((length -. 1.) *. (length -. 2.) *. cubedS);
 };
+
+let sample_variance = (x: array(float)) => {
+  let sumSquaredDeviationsValue = sum_nth_power_deviations(x, 2.);
+  let besselsCorrection = float_of_int(Array.length(x)) -. 1.;
+  sumSquaredDeviationsValue /. besselsCorrection;
+};
+
+let standard_deviation = (x: array(float)) => sample_variance(x) |> sqrt;

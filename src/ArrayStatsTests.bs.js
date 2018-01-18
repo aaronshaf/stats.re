@@ -451,6 +451,47 @@ var sum_nth_power_deviations_result = /* tuple */[
   result$22
 ];
 
+var array$22 = /* float array */[
+  1,
+  2,
+  3,
+  4,
+  5
+];
+
+var result$23 = ArrayStats.sample_variance(array$22);
+
+var sample_variance_result_001 = +(result$23 === 2.5);
+
+var sample_variance_result = /* tuple */[
+  "ArrayStats.sample_variance",
+  sample_variance_result_001,
+  2.5,
+  result$23
+];
+
+var array$23 = /* float array */[
+  2,
+  4,
+  4,
+  4,
+  5,
+  5,
+  7,
+  9
+];
+
+var result$24 = ArrayStats.standard_deviation(array$23);
+
+var standard_deviation_result_001 = +(result$24 === 2.138089935299395);
+
+var standard_deviation_result = /* tuple */[
+  "ListStats.standard_deviation",
+  standard_deviation_result_001,
+  2.138089935299395,
+  result$24
+];
+
 exports.max_result                      = max_result;
 exports.min_result                      = min_result;
 exports.product_result                  = product_result;
@@ -474,4 +515,6 @@ exports.mode_result                     = mode_result;
 exports.harmonic_mean_result            = harmonic_mean_result;
 exports.sample_skewness_result          = sample_skewness_result;
 exports.sum_nth_power_deviations_result = sum_nth_power_deviations_result;
+exports.sample_variance_result          = sample_variance_result;
+exports.standard_deviation_result       = standard_deviation_result;
 /* result Not a pure module */

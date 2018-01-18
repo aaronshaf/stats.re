@@ -227,6 +227,16 @@ function sample_skewness(x) {
   return length * match[1] / ((length - 1) * (length - 2) * cubedS);
 }
 
+function sample_variance(x) {
+  var sumSquaredDeviationsValue = sum_nth_power_deviations(x, 2);
+  var besselsCorrection = x.length - 1;
+  return sumSquaredDeviationsValue / besselsCorrection;
+}
+
+function standard_deviation(x) {
+  return Math.sqrt(sample_variance(x));
+}
+
 exports.max                      = max;
 exports.min                      = min;
 exports.product                  = product;
@@ -248,4 +258,6 @@ exports.mode_sorted              = mode_sorted;
 exports.mode                     = mode;
 exports.harmonic_mean            = harmonic_mean;
 exports.sample_skewness          = sample_skewness;
+exports.sample_variance          = sample_variance;
+exports.standard_deviation       = standard_deviation;
 /* No side effect */
