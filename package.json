@@ -1,12 +1,16 @@
 {
   "name": "stats.re",
-  "version": "2.3.0",
+  "version": "2.3.1",
   "scripts": {
     "build": "bsb -make-world",
     "start": "bsb -make-world -w & parcel tests.html",
     "clean": "bsb -clean-world"
   },
-  "keywords": ["bucklescript", "reason", "statistics"],
+  "keywords": [
+    "bucklescript",
+    "reason",
+    "statistics"
+  ],
   "author": "Aaron Shafovaloff <aaronshaf@gmail.com>",
   "license": "MIT",
   "homepage": "https://github.com/aaronshaf/stats.re",
