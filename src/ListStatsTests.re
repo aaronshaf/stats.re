@@ -171,3 +171,11 @@ let mode_result = {
   let expectation = 5.;
   ("ListStats.mode", result === expectation, expectation, result);
 };
+
+let harmonic_mean_result = {
+  let list = [2., 3.];
+  let result = ListStats.harmonic_mean(list);
+  /* needs more precision (2.4) */
+  let expectation = 2.4000000000000004;
+  ("ListStats.harmonic_mean", result === expectation, expectation, result);
+};

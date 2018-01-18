@@ -162,3 +162,16 @@ let mode_sorted = (x: array(float)) => {
 };
 
 let mode = (x: array(float)) => sort(x) |> mode_sorted;
+
+let harmonic_mean = (x: array(float)) => {
+  let (reciprocal_sum, length) =
+    Array.fold_left(
+      ((reciprocal_sum, length), current) => (
+        reciprocal_sum +. 1. /. current,
+        length +. 1.
+      ),
+      (0., 0.),
+      x
+    );
+  length /. reciprocal_sum;
+};

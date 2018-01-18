@@ -171,3 +171,11 @@ let mode_result = {
   let expectation = 5.;
   ("ArrayStats.mode", result === expectation, expectation, result);
 };
+
+let harmonic_mean_result = {
+  let array = [|2., 3.|];
+  let result = ArrayStats.harmonic_mean(array);
+  /* needs more precision (2.4) */
+  let expectation = 2.4000000000000004;
+  ("ArrayStats.harmonic_mean", result === expectation, expectation, result);
+};

@@ -193,6 +193,19 @@ function mode(x) {
   return mode_sorted(sort(x));
 }
 
+function harmonic_mean(x) {
+  var match = $$Array.fold_left((function (param, current) {
+          return /* tuple */[
+                  param[0] + 1 / current,
+                  param[1] + 1
+                ];
+        }), /* tuple */[
+        0,
+        0
+      ], x);
+  return match[1] / match[0];
+}
+
 exports.max                      = max;
 exports.min                      = min;
 exports.product                  = product;
@@ -212,4 +225,5 @@ exports.variance                 = variance;
 exports.geometric_mean           = geometric_mean;
 exports.mode_sorted              = mode_sorted;
 exports.mode                     = mode;
+exports.harmonic_mean            = harmonic_mean;
 /* No side effect */

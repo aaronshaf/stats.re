@@ -399,6 +399,22 @@ var mode_result = /* tuple */[
   result$19
 ];
 
+var array$19 = /* float array */[
+  2,
+  3
+];
+
+var result$20 = ArrayStats.harmonic_mean(array$19);
+
+var harmonic_mean_result_001 = +(result$20 === 2.4000000000000004);
+
+var harmonic_mean_result = /* tuple */[
+  "ArrayStats.harmonic_mean",
+  harmonic_mean_result_001,
+  2.4000000000000004,
+  result$20
+];
+
 exports.max_result                 = max_result;
 exports.min_result                 = min_result;
 exports.product_result             = product_result;
@@ -419,4 +435,5 @@ exports.variance_result            = variance_result;
 exports.geometric_mean_result      = geometric_mean_result;
 exports.mode_sorted_result         = mode_sorted_result;
 exports.mode_result                = mode_result;
+exports.harmonic_mean_result       = harmonic_mean_result;
 /* result Not a pure module */
