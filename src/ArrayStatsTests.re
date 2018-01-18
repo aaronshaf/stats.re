@@ -157,3 +157,17 @@ let geometric_mean_result = {
     averageGrowthRates |> Array.fold_left((prev, rate) => prev *. rate, 1.);
   ("ArrayStats.geometric_mean", result === expectation, expectation, result);
 };
+
+let mode_sorted_result = {
+  let array = [|1., 2., 2., 3., 3., 3., 5., 6.|];
+  let result = ArrayStats.mode_sorted(array);
+  let expectation = 3.;
+  ("ArrayStats.mode_sorted", result === expectation, expectation, result);
+};
+
+let mode_result = {
+  let array = [|5., 5., 5., 1., 2., 2., 3., 1., 3., 3., 5., 6.|];
+  let result = ArrayStats.mode_sorted(array);
+  let expectation = 5.;
+  ("ArrayStats.mode", result === expectation, expectation, result);
+};

@@ -155,5 +155,19 @@ let geometric_mean_result = {
   let averageGrowthRates = [averageGrowth, averageGrowth, averageGrowth];
   let result =
     averageGrowthRates |> List.fold_left((prev, rate) => prev *. rate, 1.);
-  ("ArrayStats.geometric_mean", result === expectation, expectation, result);
+  ("ListStats.geometric_mean", result === expectation, expectation, result);
+};
+
+let mode_sorted_result = {
+  let list = [1., 2., 2., 3., 3., 3., 5., 6.];
+  let result = ListStats.mode_sorted(list);
+  let expectation = 3.;
+  ("ListStats.mode_sorted", result === expectation, expectation, result);
+};
+
+let mode_result = {
+  let list = [5., 5., 5., 1., 2., 2., 3., 1., 3., 3., 5., 6.];
+  let result = ListStats.mode_sorted(list);
+  let expectation = 5.;
+  ("ListStats.mode", result === expectation, expectation, result);
 };

@@ -126,3 +126,42 @@ let geometric_mean = (growthRates: list(float)) => {
        );
   growthRate ** (1. /. length);
 };
+
+let mode_sorted = (x: list(float)) => {
+  let (defender, _defenderScore, _contender, _contenderScore) =
+    List.fold_left(
+      ((defender, defenderScore, contender, contenderScore), current) =>
+        if (contender === current) {
+          if (contenderScore >= defenderScore) {
+            (
+              /* new winner */
+              contender,
+              contenderScore + 1,
+              contender,
+              contenderScore + 1
+            );
+          } else {
+            (
+              /* defender reigns */
+              defender,
+              defenderScore,
+              contender,
+              contenderScore + 1
+            );
+          };
+        } else {
+          (
+            /* new contender */
+            defender,
+            defenderScore,
+            current,
+            1
+          );
+        },
+      (List.hd(x), 1, List.hd(x), 1),
+      List.tl(x)
+    );
+  defender;
+};
+
+let mode = (x: list(float)) => sort(x) |> mode_sorted;

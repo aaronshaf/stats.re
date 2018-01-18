@@ -351,6 +351,54 @@ var geometric_mean_result = /* tuple */[
   result$17
 ];
 
+var array$17 = /* float array */[
+  1,
+  2,
+  2,
+  3,
+  3,
+  3,
+  5,
+  6
+];
+
+var result$18 = ArrayStats.mode_sorted(array$17);
+
+var mode_sorted_result_001 = +(result$18 === 3);
+
+var mode_sorted_result = /* tuple */[
+  "ArrayStats.mode_sorted",
+  mode_sorted_result_001,
+  3,
+  result$18
+];
+
+var array$18 = /* float array */[
+  5,
+  5,
+  5,
+  1,
+  2,
+  2,
+  3,
+  1,
+  3,
+  3,
+  5,
+  6
+];
+
+var result$19 = ArrayStats.mode_sorted(array$18);
+
+var mode_result_001 = +(result$19 === 5);
+
+var mode_result = /* tuple */[
+  "ArrayStats.mode",
+  mode_result_001,
+  5,
+  result$19
+];
+
 exports.max_result                 = max_result;
 exports.min_result                 = min_result;
 exports.product_result             = product_result;
@@ -369,4 +417,6 @@ exports.root_mean_square_result    = root_mean_square_result;
 exports.min_sorted_result          = min_sorted_result;
 exports.variance_result            = variance_result;
 exports.geometric_mean_result      = geometric_mean_result;
+exports.mode_sorted_result         = mode_sorted_result;
+exports.mode_result                = mode_result;
 /* result Not a pure module */

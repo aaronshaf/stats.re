@@ -123,3 +123,42 @@ let geometric_mean = (growthRates: array(float)) => {
        );
   growthRate ** (1. /. length);
 };
+
+let mode_sorted = (x: array(float)) => {
+  let (defender, _defenderScore, _contender, _contenderScore) =
+    Array.fold_left(
+      ((defender, defenderScore, contender, contenderScore), current) =>
+        if (contender === current) {
+          if (contenderScore >= defenderScore) {
+            (
+              /* new winner */
+              contender,
+              contenderScore + 1,
+              contender,
+              contenderScore + 1
+            );
+          } else {
+            (
+              /* defender reigns */
+              defender,
+              defenderScore,
+              contender,
+              contenderScore + 1
+            );
+          };
+        } else {
+          (
+            /* new contender */
+            defender,
+            defenderScore,
+            current,
+            1
+          );
+        },
+      (x[0], 1, x[0], 1),
+      Array.sub(x, 1, Array.length(x) - 1)
+    );
+  defender;
+};
+
+let mode = (x: array(float)) => sort(x) |> mode_sorted;

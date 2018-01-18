@@ -24,12 +24,14 @@ Stats.add_to_mean(mean: float, listLength: float, newValue: float) => float;
 ArrayStats.min(x: array(float)) => float;
 ArrayStats.max(x: array(float)) => float;
 ArrayStats.sum_simple(x: array(float)) => float;
+ArrayStats.mode(x: array(float)) => float;
 ArrayStats.quantile(quantile: float, x: array(float)) => float;
 ArrayStats.product(x: array(float)) => float;
 
 /* sorted */
 ArrayStats.sort(x: array(float)) => array(float);
 ArrayStats.min_sorted(x: array(float)) => float;
+ArrayStats.mode_sorted(x: array(float)) => float;
 ArrayStats.quantile_sorted(quantile: float, x: array(float)) => float;
 
 /* measures of central tendency */
@@ -49,12 +51,14 @@ ArrayStats.interquartile_range(x: array(float)) => float
 ListStats.min(x: list(float)) => float;
 ListStats.max(x: list(float)) => float;
 ListStats.sum_simple(x: list(float)) => float;
+ListStats.mode(x: list(float)) => float;
 ListStats.quantile(quantile: float, x: list(float)) => float;
 ListStats.product(x: list(float)) => float;
 
 /* sorted */
 ListStats.sort(x: list(float)) => list(float);
 ListStats.min_sorted(x: list(float)) => float;
+ListStats.mode_sorted(x: list(float)) => float;
 ListStats.quantile_sorted(quantile: float, x: list(float)) => float;
 
 /* measures of central tendency */
@@ -64,7 +68,7 @@ ListStats.root_mean_squared(x: list(float)) => float;
 ListStats.variance(x: list(float)) => float;
 
 /* measures of dispersion */
-ListStats.interquartile_range(x: array(float)) => float
+ListStats.interquartile_range(x: list(float)) => float
 ```
 
 ## Dev
@@ -77,10 +81,7 @@ yarn start
 
 ## Todo
 
-* mode
 * harmonicMean
-* geometricMean
-* interquartileRange
 
 See more [here](https://simplestatistics.org/docs/).
 

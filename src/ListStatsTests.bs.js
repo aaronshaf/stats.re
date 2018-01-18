@@ -462,10 +462,92 @@ var result$17 = List.fold_left((function (prev, rate) {
 var geometric_mean_result_001 = +(result$17 === expectation);
 
 var geometric_mean_result = /* tuple */[
-  "ArrayStats.geometric_mean",
+  "ListStats.geometric_mean",
   geometric_mean_result_001,
   expectation,
   result$17
+];
+
+var result$18 = ListStats.mode_sorted(/* :: */[
+      1,
+      /* :: */[
+        2,
+        /* :: */[
+          2,
+          /* :: */[
+            3,
+            /* :: */[
+              3,
+              /* :: */[
+                3,
+                /* :: */[
+                  5,
+                  /* :: */[
+                    6,
+                    /* [] */0
+                  ]
+                ]
+              ]
+            ]
+          ]
+        ]
+      ]
+    ]);
+
+var mode_sorted_result_001 = +(result$18 === 3);
+
+var mode_sorted_result = /* tuple */[
+  "ListStats.mode_sorted",
+  mode_sorted_result_001,
+  3,
+  result$18
+];
+
+var result$19 = ListStats.mode_sorted(/* :: */[
+      5,
+      /* :: */[
+        5,
+        /* :: */[
+          5,
+          /* :: */[
+            1,
+            /* :: */[
+              2,
+              /* :: */[
+                2,
+                /* :: */[
+                  3,
+                  /* :: */[
+                    1,
+                    /* :: */[
+                      3,
+                      /* :: */[
+                        3,
+                        /* :: */[
+                          5,
+                          /* :: */[
+                            6,
+                            /* [] */0
+                          ]
+                        ]
+                      ]
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          ]
+        ]
+      ]
+    ]);
+
+var mode_result_001 = +(result$19 === 5);
+
+var mode_result = /* tuple */[
+  "ListStats.mode",
+  mode_result_001,
+  5,
+  result$19
 ];
 
 exports.max_result                 = max_result;
@@ -486,4 +568,6 @@ exports.root_mean_square_result    = root_mean_square_result;
 exports.min_sorted_result          = min_sorted_result;
 exports.variance_result            = variance_result;
 exports.geometric_mean_result      = geometric_mean_result;
+exports.mode_sorted_result         = mode_sorted_result;
+exports.mode_result                = mode_result;
 /* result Not a pure module */

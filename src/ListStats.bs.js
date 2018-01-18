@@ -146,6 +146,48 @@ function geometric_mean(growthRates) {
   return Math.pow(match[0], 1 / match[1]);
 }
 
+function mode_sorted(x) {
+  return List.fold_left((function (param, current) {
+                  var contender = param[2];
+                  var defenderScore = param[1];
+                  var defender = param[0];
+                  if (contender === current) {
+                    var contenderScore = param[3];
+                    if (contenderScore >= defenderScore) {
+                      return /* tuple */[
+                              contender,
+                              contenderScore + 1 | 0,
+                              contender,
+                              contenderScore + 1 | 0
+                            ];
+                    } else {
+                      return /* tuple */[
+                              defender,
+                              defenderScore,
+                              contender,
+                              contenderScore + 1 | 0
+                            ];
+                    }
+                  } else {
+                    return /* tuple */[
+                            defender,
+                            defenderScore,
+                            current,
+                            1
+                          ];
+                  }
+                }), /* tuple */[
+                List.hd(x),
+                1,
+                List.hd(x),
+                1
+              ], List.tl(x))[0];
+}
+
+function mode(x) {
+  return mode_sorted(sort(x));
+}
+
 exports.max                      = max;
 exports.min                      = min;
 exports.product                  = product;
@@ -163,4 +205,6 @@ exports.min_sorted               = min_sorted;
 exports.sum_nth_power_deviations = sum_nth_power_deviations;
 exports.variance                 = variance;
 exports.geometric_mean           = geometric_mean;
+exports.mode_sorted              = mode_sorted;
+exports.mode                     = mode;
 /* No side effect */
