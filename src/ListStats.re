@@ -7,10 +7,33 @@ let min = (x: list(float)) =>
 let product = (x: list(float)) =>
   ListLabels.fold_left(~f=(a, b) => a *. b, ~init=1., x);
 
+let sum = (x: list(float)) => {
+  let (sum, _correction) = {
+    let initial = (List.hd(x), 0.);
+    List.fold_left(
+      ((sum, correction), current) => {
+        let newSum = sum +. current;
+        if (abs_float(sum) >= abs_float(current)) {
+          let newCorrection = correction +. (sum -. newSum +. current);
+          (newSum, newCorrection);
+        } else {
+          let newCorrection = correction +. (current -. newSum +. sum);
+          (newSum, newCorrection);
+        };
+      },
+      initial,
+      List.tl(x)
+    );
+  };
+  sum;
+};
+
 let sum_simple = (x: list(float)) =>
   ListLabels.fold_left(~f=(a, b) => a +. b, ~init=0., x);
 
-let mean = (x: list(float)) => {
+let mean = (x: list(float)) => sum(x) /. float_of_int(List.length(x));
+
+let mean_fold = (x: list(float)) => {
   let (mean, _length) =
     List.fold_left(
       ((previousMean, previousLength), valueToAdd) => (

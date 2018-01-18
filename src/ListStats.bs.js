@@ -20,6 +20,32 @@ function product(x) {
               }), 1, x);
 }
 
+function sum(x) {
+  var initial_000 = List.hd(x);
+  var initial = /* tuple */[
+    initial_000,
+    0
+  ];
+  return List.fold_left((function (param, current) {
+                  var correction = param[1];
+                  var sum = param[0];
+                  var newSum = sum + current;
+                  if (Math.abs(sum) >= Math.abs(current)) {
+                    var newCorrection = correction + (sum - newSum + current);
+                    return /* tuple */[
+                            newSum,
+                            newCorrection
+                          ];
+                  } else {
+                    var newCorrection$1 = correction + (current - newSum + sum);
+                    return /* tuple */[
+                            newSum,
+                            newCorrection$1
+                          ];
+                  }
+                }), initial, List.tl(x))[0];
+}
+
 function sum_simple(x) {
   return ListLabels.fold_left((function (a, b) {
                 return a + b;
@@ -27,6 +53,10 @@ function sum_simple(x) {
 }
 
 function mean(x) {
+  return sum(x) / List.length(x);
+}
+
+function mean_fold(x) {
   return List.fold_left((function (param, valueToAdd) {
                   var previousLength = param[1];
                   return /* tuple */[
@@ -119,8 +149,10 @@ function geometric_mean(growthRates) {
 exports.max                      = max;
 exports.min                      = min;
 exports.product                  = product;
+exports.sum                      = sum;
 exports.sum_simple               = sum_simple;
 exports.mean                     = mean;
+exports.mean_fold                = mean_fold;
 exports.sort                     = sort;
 exports.quantile_sorted          = quantile_sorted;
 exports.quantile                 = quantile;

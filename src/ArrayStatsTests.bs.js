@@ -65,13 +65,13 @@ var array$3 = /* float array */[
   4.5
 ];
 
-var result$3 = ArrayStats.sum_simple(array$3);
+var result$3 = ArrayStats.sum(array$3);
 
-var sum_simple_result_001 = +(result$3 === 11.4);
+var sum_result_001 = +(result$3 === 11.4);
 
-var sum_simple_result = /* tuple */[
-  "ArrayStats.sum_simple",
-  sum_simple_result_001,
+var sum_result = /* tuple */[
+  "ArrayStats.sum",
+  sum_result_001,
   11.4,
   result$3
 ];
@@ -83,33 +83,32 @@ var array$4 = /* float array */[
   4.5
 ];
 
-var result$4 = ArrayStats.mean(array$4);
+var result$4 = ArrayStats.sum_simple(array$4);
 
-var mean_result1_001 = +(result$4 === 2.85);
+var sum_simple_result_001 = +(result$4 === 11.4);
+
+var sum_simple_result = /* tuple */[
+  "ArrayStats.sum_simple",
+  sum_simple_result_001,
+  11.4,
+  result$4
+];
+
+var array$5 = /* float array */[
+  1.2,
+  2.3,
+  3.4,
+  4.5
+];
+
+var result$5 = ArrayStats.mean(array$5);
+
+var mean_result1_001 = +(result$5 === 2.85);
 
 var mean_result1 = /* tuple */[
   "ArrayStats.mean",
   mean_result1_001,
   2.85,
-  result$4
-];
-
-var array$5 = /* float array */[
-  0,
-  1,
-  2,
-  3,
-  4
-];
-
-var result$5 = ArrayStats.quantile_sorted(0, array$5);
-
-var quantile_sorted_result1_001 = +(result$5 === 0);
-
-var quantile_sorted_result1 = /* tuple */[
-  "ArrayStats.quantile_sorted (0.)",
-  quantile_sorted_result1_001,
-  0,
   result$5
 ];
 
@@ -121,14 +120,14 @@ var array$6 = /* float array */[
   4
 ];
 
-var result$6 = ArrayStats.quantile_sorted(0.25, array$6);
+var result$6 = ArrayStats.quantile_sorted(0, array$6);
 
-var quantile_sorted_result2_001 = +(result$6 === 1);
+var quantile_sorted_result1_001 = +(result$6 === 0);
 
-var quantile_sorted_result2 = /* tuple */[
-  "ArrayStats.quantile_sorted (0.25)",
-  quantile_sorted_result2_001,
-  1,
+var quantile_sorted_result1 = /* tuple */[
+  "ArrayStats.quantile_sorted (0.)",
+  quantile_sorted_result1_001,
+  0,
   result$6
 ];
 
@@ -140,14 +139,14 @@ var array$7 = /* float array */[
   4
 ];
 
-var result$7 = ArrayStats.quantile_sorted(0.5, array$7);
+var result$7 = ArrayStats.quantile_sorted(0.25, array$7);
 
-var quantile_sorted_result3_001 = +(result$7 === 2);
+var quantile_sorted_result2_001 = +(result$7 === 1);
 
-var quantile_sorted_result3 = /* tuple */[
-  "ArrayStats.quantile_sorted (0.5)",
-  quantile_sorted_result3_001,
-  2,
+var quantile_sorted_result2 = /* tuple */[
+  "ArrayStats.quantile_sorted (0.25)",
+  quantile_sorted_result2_001,
+  1,
   result$7
 ];
 
@@ -159,14 +158,14 @@ var array$8 = /* float array */[
   4
 ];
 
-var result$8 = ArrayStats.quantile_sorted(0.75, array$8);
+var result$8 = ArrayStats.quantile_sorted(0.5, array$8);
 
-var quantile_sorted_result4_001 = +(result$8 === 3);
+var quantile_sorted_result3_001 = +(result$8 === 2);
 
-var quantile_sorted_result4 = /* tuple */[
-  "ArrayStats.quantile_sorted (0.75)",
-  quantile_sorted_result4_001,
-  3,
+var quantile_sorted_result3 = /* tuple */[
+  "ArrayStats.quantile_sorted (0.5)",
+  quantile_sorted_result3_001,
+  2,
   result$8
 ];
 
@@ -178,18 +177,37 @@ var array$9 = /* float array */[
   4
 ];
 
-var result$9 = ArrayStats.quantile_sorted(1, array$9);
+var result$9 = ArrayStats.quantile_sorted(0.75, array$9);
 
-var quantile_sorted_result5_001 = +(result$9 === 4);
+var quantile_sorted_result4_001 = +(result$9 === 3);
+
+var quantile_sorted_result4 = /* tuple */[
+  "ArrayStats.quantile_sorted (0.75)",
+  quantile_sorted_result4_001,
+  3,
+  result$9
+];
+
+var array$10 = /* float array */[
+  0,
+  1,
+  2,
+  3,
+  4
+];
+
+var result$10 = ArrayStats.quantile_sorted(1, array$10);
+
+var quantile_sorted_result5_001 = +(result$10 === 4);
 
 var quantile_sorted_result5 = /* tuple */[
   "ArrayStats.quantile_sorted (1.)",
   quantile_sorted_result5_001,
   4,
-  result$9
+  result$10
 ];
 
-var array$10 = /* float array */[
+var array$11 = /* float array */[
   3,
   0,
   1,
@@ -197,32 +215,14 @@ var array$10 = /* float array */[
   4
 ];
 
-var result$10 = ArrayStats.quantile(0.75, array$10);
+var result$11 = ArrayStats.quantile(0.75, array$11);
 
-var quantile_result_001 = +(result$10 === 3);
+var quantile_result_001 = +(result$11 === 3);
 
 var quantile_result = /* tuple */[
   "ArrayStats.quantile",
   quantile_result_001,
   3,
-  result$10
-];
-
-var array$11 = /* float array */[
-  0,
-  1,
-  2,
-  4
-];
-
-var result$11 = ArrayStats.interquartile_range(array$11);
-
-var interquartile_range_result_001 = +(result$11 === 2);
-
-var interquartile_range_result = /* tuple */[
-  "ArrayStats.interquartile_range",
-  interquartile_range_result_001,
-  2,
   result$11
 ];
 
@@ -230,40 +230,58 @@ var array$12 = /* float array */[
   0,
   1,
   2,
-  3,
   4
 ];
 
-var result$12 = ArrayStats.median(array$12);
+var result$12 = ArrayStats.interquartile_range(array$12);
 
-var median_result_001 = +(result$12 === 2);
+var interquartile_range_result_001 = +(result$12 === 2);
 
-var median_result = /* tuple */[
-  "ArrayStats.median",
-  median_result_001,
+var interquartile_range_result = /* tuple */[
+  "ArrayStats.interquartile_range",
+  interquartile_range_result_001,
   2,
   result$12
 ];
 
 var array$13 = /* float array */[
+  0,
+  1,
+  2,
+  3,
+  4
+];
+
+var result$13 = ArrayStats.median(array$13);
+
+var median_result_001 = +(result$13 === 2);
+
+var median_result = /* tuple */[
+  "ArrayStats.median",
+  median_result_001,
+  2,
+  result$13
+];
+
+var array$14 = /* float array */[
   -1,
   1,
   -1,
   1
 ];
 
-var result$13 = ArrayStats.root_mean_square(array$13);
+var result$14 = ArrayStats.root_mean_square(array$14);
 
-var root_mean_square_result_001 = +(result$13 === 1);
+var root_mean_square_result_001 = +(result$14 === 1);
 
 var root_mean_square_result = /* tuple */[
   "ArrayStats.root_mean_square",
   root_mean_square_result_001,
   1,
-  result$13
+  result$14
 ];
 
-var array$14 = /* float array */[
+var array$15 = /* float array */[
   0,
   1,
   2,
@@ -271,18 +289,18 @@ var array$14 = /* float array */[
   4
 ];
 
-var result$14 = ArrayStats.min_sorted(array$14);
+var result$15 = ArrayStats.min_sorted(array$15);
 
-var min_sorted_result_001 = +(result$14 === 0);
+var min_sorted_result_001 = +(result$15 === 0);
 
 var min_sorted_result = /* tuple */[
   "ArrayStats.min_sorted",
   min_sorted_result_001,
   0,
-  result$14
+  result$15
 ];
 
-var array$15 = /* float array */[
+var array$16 = /* float array */[
   1,
   2,
   3,
@@ -291,15 +309,15 @@ var array$15 = /* float array */[
   6
 ];
 
-var result$15 = ArrayStats.variance(array$15);
+var result$16 = ArrayStats.variance(array$16);
 
-var variance_result_001 = +(result$15 === 2.9166666666666665);
+var variance_result_001 = +(result$16 === 2.9166666666666665);
 
 var variance_result = /* tuple */[
   "ArrayStats.variance",
   variance_result_001,
   2.9166666666666665,
-  result$15
+  result$16
 ];
 
 var growthRates = /* float array */[
@@ -320,22 +338,23 @@ var averageGrowthRates = /* float array */[
   averageGrowth
 ];
 
-var result$16 = $$Array.fold_left((function (prev, rate) {
+var result$17 = $$Array.fold_left((function (prev, rate) {
         return prev * rate;
       }), 1, averageGrowthRates);
 
-var geometric_mean_result_001 = +(result$16 === expectation);
+var geometric_mean_result_001 = +(result$17 === expectation);
 
 var geometric_mean_result = /* tuple */[
   "ArrayStats.geometric_mean",
   geometric_mean_result_001,
   expectation,
-  result$16
+  result$17
 ];
 
 exports.max_result                 = max_result;
 exports.min_result                 = min_result;
 exports.product_result             = product_result;
+exports.sum_result                 = sum_result;
 exports.sum_simple_result          = sum_simple_result;
 exports.mean_result1               = mean_result1;
 exports.quantile_sorted_result1    = quantile_sorted_result1;

@@ -19,6 +19,13 @@ let product_result = {
   ("ArrayStats.product", result === expectation, expectation, result);
 };
 
+let sum_result = {
+  let array = [|1.2, 2.3, 3.4, 4.5|];
+  let result = ArrayStats.sum(array);
+  let expectation = 11.4;
+  ("ArrayStats.sum", result === expectation, expectation, result);
+};
+
 let sum_simple_result = {
   let array = [|1.2, 2.3, 3.4, 4.5|];
   let result = ArrayStats.sum_simple(array);

@@ -19,6 +19,13 @@ let product_result = {
   ("ListStats.product", result === expectation, expectation, result);
 };
 
+let sum_result = {
+  let list = [1.2, 2.3, 3.4, 4.5];
+  let result = ListStats.sum(list);
+  let expectation = 11.4;
+  ("ListStats.sum", result === expectation, expectation, result);
+};
+
 let sum_simple_result = {
   let list = [1.2, 2.3, 3.4, 4.5];
   let result = ListStats.sum_simple(list);

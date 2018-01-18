@@ -7,10 +7,33 @@ let min = (x: array(float)) =>
 let product = (x: array(float)) =>
   ArrayLabels.fold_left(~f=(a, b) => a *. b, ~init=1., x);
 
+let sum = (x: array(float)) => {
+  let (sum, _correction) = {
+    let initial = (x[0], 0.);
+    Array.fold_left(
+      ((sum, correction), current) => {
+        let newSum = sum +. current;
+        if (abs_float(sum) >= abs_float(current)) {
+          let newCorrection = correction +. (sum -. newSum +. current);
+          (newSum, newCorrection);
+        } else {
+          let newCorrection = correction +. (current -. newSum +. sum);
+          (newSum, newCorrection);
+        };
+      },
+      initial,
+      Array.sub(x, 1, Array.length(x) - 1)
+    );
+  };
+  sum;
+};
+
 let sum_simple = (x: array(float)) =>
   ArrayLabels.fold_left(~f=(a, b) => a +. b, ~init=0., x);
 
-let mean = (x: array(float)) => {
+let mean = (x: array(float)) => sum(x) /. float_of_int(Array.length(x));
+
+let mean_fold = (x: array(float)) => {
   let (mean, _length) =
     Array.fold_left(
       ((previousMean, previousLength), valueToAdd) => (
