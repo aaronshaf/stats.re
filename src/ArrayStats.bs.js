@@ -129,8 +129,8 @@ function min_sorted(x) {
 
 function sum_nth_power_deviations(x, n) {
   var meanValue = mean(x);
-  return $$Array.fold_left((function (prev, current) {
-                return prev + Math.pow(current - meanValue, n);
+  return $$Array.fold_left((function (sum, current) {
+                return sum + Math.pow(current - meanValue, n);
               }), 0, x);
 }
 

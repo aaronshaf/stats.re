@@ -39,13 +39,14 @@ ArrayStats.quantile_sorted(quantile: float, x: array(float)) => float;
 ArrayStats.mean(x: array(float)) => float;
 ArrayStats.median(x: array(float)) => float;
 ArrayStats.root_mean_squared(x: array(float)) => float;
-ArrayStats.variance(x: array(float)) => float;
 ArrayStats.geometric_mean(x: array(float)) => float;
 ArrayStats.harmonic_mean(x: array(float)) => float;
 ArrayStats.sample_skewness(x: array(float)) => float;
 
 /* measures of dispersion */
-ArrayStats.interquartile_range(x: array(float)) => float
+ArrayStats.variance(x: array(float)) => float;
+ArrayStats.interquartile_range(x: array(float)) => float;
+ArrayStats.sum_nth_power_deviations(x: array(float), n: float) => float;
 ```
 
 ### Utils

@@ -187,3 +187,16 @@ let sample_skewness_result = {
   let expectation = 0.590128656384365;
   ("ArrayStats.sample_skewness", result === expectation, expectation, result);
 };
+
+let sum_nth_power_deviations_result = {
+  let array = [|1., 3., 5.|];
+  let n = 2.;
+  let result = ArrayStats.sum_nth_power_deviations(array, n);
+  let expectation = 8.;
+  (
+    "ArrayStats.sum_nth_power_deviations",
+    result === expectation,
+    expectation,
+    result
+  );
+};

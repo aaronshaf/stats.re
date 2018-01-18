@@ -593,26 +593,47 @@ var sample_skewness_result = /* tuple */[
   result$21
 ];
 
-exports.max_result                 = max_result;
-exports.min_result                 = min_result;
-exports.product_result             = product_result;
-exports.sum_result                 = sum_result;
-exports.sum_simple_result          = sum_simple_result;
-exports.mean_result1               = mean_result1;
-exports.quantile_sorted_result1    = quantile_sorted_result1;
-exports.quantile_sorted_result2    = quantile_sorted_result2;
-exports.quantile_sorted_result3    = quantile_sorted_result3;
-exports.quantile_sorted_result4    = quantile_sorted_result4;
-exports.quantile_sorted_result5    = quantile_sorted_result5;
-exports.quantile_result            = quantile_result;
-exports.interquartile_range_result = interquartile_range_result;
-exports.median_result              = median_result;
-exports.root_mean_square_result    = root_mean_square_result;
-exports.min_sorted_result          = min_sorted_result;
-exports.variance_result            = variance_result;
-exports.geometric_mean_result      = geometric_mean_result;
-exports.mode_sorted_result         = mode_sorted_result;
-exports.mode_result                = mode_result;
-exports.harmonic_mean_result       = harmonic_mean_result;
-exports.sample_skewness_result     = sample_skewness_result;
+var result$22 = ListStats.sum_nth_power_deviations(/* :: */[
+      1,
+      /* :: */[
+        3,
+        /* :: */[
+          5,
+          /* [] */0
+        ]
+      ]
+    ], 2);
+
+var sum_nth_power_deviations_result_001 = +(result$22 === 8);
+
+var sum_nth_power_deviations_result = /* tuple */[
+  "ListStats.sum_nth_power_deviations",
+  sum_nth_power_deviations_result_001,
+  8,
+  result$22
+];
+
+exports.max_result                      = max_result;
+exports.min_result                      = min_result;
+exports.product_result                  = product_result;
+exports.sum_result                      = sum_result;
+exports.sum_simple_result               = sum_simple_result;
+exports.mean_result1                    = mean_result1;
+exports.quantile_sorted_result1         = quantile_sorted_result1;
+exports.quantile_sorted_result2         = quantile_sorted_result2;
+exports.quantile_sorted_result3         = quantile_sorted_result3;
+exports.quantile_sorted_result4         = quantile_sorted_result4;
+exports.quantile_sorted_result5         = quantile_sorted_result5;
+exports.quantile_result                 = quantile_result;
+exports.interquartile_range_result      = interquartile_range_result;
+exports.median_result                   = median_result;
+exports.root_mean_square_result         = root_mean_square_result;
+exports.min_sorted_result               = min_sorted_result;
+exports.variance_result                 = variance_result;
+exports.geometric_mean_result           = geometric_mean_result;
+exports.mode_sorted_result              = mode_sorted_result;
+exports.mode_result                     = mode_result;
+exports.harmonic_mean_result            = harmonic_mean_result;
+exports.sample_skewness_result          = sample_skewness_result;
+exports.sum_nth_power_deviations_result = sum_nth_power_deviations_result;
 /* result Not a pure module */

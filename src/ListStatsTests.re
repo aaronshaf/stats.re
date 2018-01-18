@@ -187,3 +187,16 @@ let sample_skewness_result = {
   let expectation = 0.590128656384365;
   ("ListStats.sample_skewness", result === expectation, expectation, result);
 };
+
+let sum_nth_power_deviations_result = {
+  let list = [1., 3., 5.];
+  let n = 2.;
+  let result = ListStats.sum_nth_power_deviations(list, n);
+  let expectation = 8.;
+  (
+    "ListStats.sum_nth_power_deviations",
+    result === expectation,
+    expectation,
+    result
+  );
+};
