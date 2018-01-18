@@ -567,6 +567,32 @@ var harmonic_mean_result = /* tuple */[
   result$20
 ];
 
+var result$21 = ListStats.sample_skewness(/* :: */[
+      2,
+      /* :: */[
+        4,
+        /* :: */[
+          6,
+          /* :: */[
+            3,
+            /* :: */[
+              1,
+              /* [] */0
+            ]
+          ]
+        ]
+      ]
+    ]);
+
+var sample_skewness_result_001 = +(result$21 === 0.590128656384365);
+
+var sample_skewness_result = /* tuple */[
+  "ListStats.sample_skewness",
+  sample_skewness_result_001,
+  0.590128656384365,
+  result$21
+];
+
 exports.max_result                 = max_result;
 exports.min_result                 = min_result;
 exports.product_result             = product_result;
@@ -588,4 +614,5 @@ exports.geometric_mean_result      = geometric_mean_result;
 exports.mode_sorted_result         = mode_sorted_result;
 exports.mode_result                = mode_result;
 exports.harmonic_mean_result       = harmonic_mean_result;
+exports.sample_skewness_result     = sample_skewness_result;
 /* result Not a pure module */

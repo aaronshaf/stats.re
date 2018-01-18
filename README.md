@@ -48,6 +48,7 @@ ArrayStats.root_mean_squared(x: array(float)) => float;
 ArrayStats.variance(x: array(float)) => float;
 ArrayStats.geometric_mean(x: array(float)) => float;
 ArrayStats.harmonic_mean(x: array(float)) => float;
+ArrayStats.sample_skewness(x: array(float)) => float;
 
 /* measures of dispersion */
 ArrayStats.interquartile_range(x: array(float)) => float
@@ -77,6 +78,7 @@ ListStats.root_mean_squared(x: list(float)) => float;
 ListStats.variance(x: list(float)) => float;
 ListStats.geometric_mean(x: list(float)) => float;
 ListStats.harmonic_mean(x: list(float)) => float;
+ListStats.sample_skewness(x: list(float)) => float;
 
 /* measures of dispersion */
 ListStats.interquartile_range(x: list(float)) => float

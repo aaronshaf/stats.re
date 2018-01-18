@@ -178,3 +178,27 @@ let harmonic_mean = (x: list(float)) => {
     );
   length /. reciprocal_sum;
 };
+
+let sample_skewness = (x: list(float)) => {
+  let mean_value = mean(x);
+  let (sum_squared_deviations, sum_cubed_deviations, length) =
+    x
+    |> List.fold_left(
+         ((sum_squared_deviations, sum_cubed_deviations, length), current) => {
+           let deviation = current -. mean_value;
+           (
+             sum_squared_deviations +. deviation *. deviation,
+             sum_cubed_deviations +. deviation *. deviation *. deviation,
+             length +. 1.
+           );
+         },
+         (0., 0., 0.)
+       );
+  let bessels_correction = length -. 1.;
+  let theSampleStandardDeviation =
+    sqrt(sum_squared_deviations /. bessels_correction);
+  let cubedS = theSampleStandardDeviation ** 3.;
+  length
+  *. sum_cubed_deviations
+  /. ((length -. 1.) *. (length -. 2.) *. cubedS);
+};

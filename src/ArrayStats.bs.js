@@ -206,6 +206,27 @@ function harmonic_mean(x) {
   return match[1] / match[0];
 }
 
+function sample_skewness(x) {
+  var mean_value = mean(x);
+  var match = $$Array.fold_left((function (param, current) {
+          var deviation = current - mean_value;
+          return /* tuple */[
+                  param[0] + deviation * deviation,
+                  param[1] + deviation * deviation * deviation,
+                  param[2] + 1
+                ];
+        }), /* tuple */[
+        0,
+        0,
+        0
+      ], x);
+  var length = match[2];
+  var bessels_correction = length - 1;
+  var theSampleStandardDeviation = Math.sqrt(match[0] / bessels_correction);
+  var cubedS = Math.pow(theSampleStandardDeviation, 3);
+  return length * match[1] / ((length - 1) * (length - 2) * cubedS);
+}
+
 exports.max                      = max;
 exports.min                      = min;
 exports.product                  = product;
@@ -226,4 +247,5 @@ exports.geometric_mean           = geometric_mean;
 exports.mode_sorted              = mode_sorted;
 exports.mode                     = mode;
 exports.harmonic_mean            = harmonic_mean;
+exports.sample_skewness          = sample_skewness;
 /* No side effect */

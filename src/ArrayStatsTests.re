@@ -179,3 +179,11 @@ let harmonic_mean_result = {
   let expectation = 2.4000000000000004;
   ("ArrayStats.harmonic_mean", result === expectation, expectation, result);
 };
+
+let sample_skewness_result = {
+  let array = [|2., 4., 6., 3., 1.|];
+  let result = ArrayStats.sample_skewness(array);
+  /* needs more precision (2.4) */
+  let expectation = 0.590128656384365;
+  ("ArrayStats.sample_skewness", result === expectation, expectation, result);
+};
