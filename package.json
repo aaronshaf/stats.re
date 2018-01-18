@@ -6,13 +6,14 @@
     "start": "bsb -make-world -w & parcel tests.html",
     "clean": "bsb -clean-world"
   },
-  "keywords": [
-    "bucklescript",
-    "reason",
-    "statistics"
-  ],
+  "keywords": ["bucklescript", "reason", "statistics"],
   "author": "Aaron Shafovaloff <aaronshaf@gmail.com>",
   "license": "MIT",
+  "homepage": "https://github.com/aaronshaf/stats.re",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:aaronshaf/stats.re.git"
+  },
   "devDependencies": {
     "bs-platform": "^2.1.0",
     "lit-html": "^0.8.0",
